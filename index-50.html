@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BWAFA — Building With Africans, For Africa</title>
+<link href="https://raw.githubusercontent.com/BWAFA-Global/BWAFA.com/main/image-01-1bfacd54218ec7df.webp" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --cream: #F6EFE2;
+    --cream-2: #ECE0C9;
+    --maroon: #6E2430;
+    --maroon-deep: #4A171F;
+    --ink: #2A2119;
+    --ink-soft: #5C5044;
+    --line: rgba(74,23,31,0.18);
+    --white: #FBF7EE;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    color:var(--maroon-deep);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){.wrap{padding:0 22px;}}
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{outline:2px solid var(--maroon); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important; transition:none!important;}}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,239,226,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:flex-start;
+    height:76px;
+  }
+  .brand{display:flex; align-items:center; gap:12px; margin-right:auto;}
+  .brand img{width:40px; height:40px; border-radius:50%;}
+  .brand span{font-family:'Fraunces', serif; font-size:1.15rem; font-weight:600; color:var(--maroon-deep);}
+  .navlinks{display:flex; gap:26px; font-size:0.92rem; color:var(--ink-soft);}
+  .navlinks a{border-bottom:1px solid transparent; padding-bottom:3px; transition:border-color .2s, color .2s;}
+  .navlinks a:hover{border-color:var(--maroon); color:var(--maroon-deep);}
+  .navcta{
+    font-size:0.88rem; font-weight:600; color:var(--white);
+    background:var(--maroon); padding:10px 20px; border-radius:2px;
+    margin-left:24px;
+    transition:background .2s;
+  }
+  .navcta:hover{background:var(--maroon-deep);}
+  .menu-btn{display:none; background:none; border:none; cursor:pointer;}
+  .menu-btn span{display:block; width:24px; height:2px; background:var(--maroon-deep); margin:5px 0;}
+  @media(max-width:1100px) and (min-width:901px){
+    .navlinks{gap:18px; font-size:0.86rem;}
+    .navcta{margin-left:16px; padding:10px 16px;}
+  }
+  @media(max-width:900px){
+    .navlinks{display:none;}
+    .navcta{display:none;}
+    .menu-btn{display:block; padding:8px;}
+    nav.wrap.menu-open .navlinks{
+      display:flex;
+      position:absolute;
+      top:76px;
+      left:0;
+      right:0;
+      flex-direction:column;
+      gap:0;
+      padding:10px 0;
+      background:rgba(246,239,226,0.98);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      box-shadow:0 10px 24px rgba(36,26,20,.10);
+    }
+    nav.wrap.menu-open .navlinks a{
+      display:block;
+      padding:12px 24px;
+      border-bottom:1px solid rgba(120,88,65,.14);
+    }
+    nav.wrap.menu-open .navlinks a:last-child{border-bottom:none;}
+    nav.wrap.menu-open .navcta{
+      display:block;
+      position:absolute;
+      top:315px;
+      left:24px;
+      right:24px;
+      margin:0;
+      text-align:center;
+      z-index:2;
+    }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:88px 0 96px;}
+  .hero .wrap{display:grid; grid-template-columns:1.05fr 0.85fr; gap:64px; align-items:center;}
+  .hero-tag{font-size:0.95rem; color:var(--maroon); font-weight:600; margin-bottom:18px; display:block;}
+  .hero h1{font-size:clamp(2.4rem, 4.2vw, 3.6rem); line-height:1.08;}
+  .hero .sub{font-family:'Fraunces', serif; font-style:italic; font-weight:400; font-size:1.25rem; color:var(--maroon); margin-top:20px; max-width:46ch;}
+  .hero p.lead{margin-top:22px; max-width:52ch; color:var(--ink-soft); font-size:1.05rem;}
+  .hero-ctas{margin-top:34px; display:flex; gap:16px; flex-wrap:wrap;}
+  .btn-primary, .btn-secondary{
+    display:inline-block; padding:14px 26px; font-size:0.95rem; font-weight:600; border-radius:2px;
+    transition:transform .15s, background .2s, color .2s;
+  }
+  .btn-primary{background:var(--maroon); color:var(--white);}
+  .btn-primary:hover{background:var(--maroon-deep);}
+  .btn-secondary{border:1px solid var(--maroon-deep); color:var(--maroon-deep);}
+  .btn-secondary:hover{background:var(--maroon-deep); color:var(--white);}
+  .hero-art{position:relative;}
+  .hero-art .frame{
+    border:10px solid var(--white);
+    box-shadow:0 24px 48px rgba(74,23,31,0.18);
+  }
+  .hero-art img{display:block;}
+  @media(max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-art{order:-1;}
+    .hero-art .frame{max-width:340px; margin:0 auto;}
+  }
+
+  /* ---------- AT A GLANCE ---------- */
+  .glance{background:var(--cream-2); padding:52px 0;}
+  .glance .wrap{
+    display:grid; grid-template-columns:repeat(5,1fr);
+  }
+  .glance-item{padding:0 22px; border-left:1px solid var(--line);}
+  .glance-item:first-child{border-left:none; padding-left:0;}
+  .glance-item .label{font-size:0.78rem; color:var(--maroon); font-weight:600; margin-bottom:8px;}
+  .glance-item .val{font-size:0.92rem; color:var(--ink); line-height:1.5;}
+  @media(max-width:900px){
+    .glance .wrap{grid-template-columns:1fr 1fr; row-gap:28px;}
+    .glance-item{border-left:none; border-top:1px solid var(--line); padding:20px 18px 0 0;}
+    .glance-item:first-child{border-top:none; padding-top:0;}
+  }
+  @media(max-width:560px){.glance .wrap{grid-template-columns:1fr;}}
+
+  /* ---------- GAP SECTION ---------- */
+  .gap{padding:100px 0;}
+  .gap .wrap{display:grid; grid-template-columns:0.9fr 1.3fr; gap:60px;}
+  .gap-stat{font-family:'Fraunces', serif; font-size:clamp(4rem,9vw,7rem); color:var(--maroon); line-height:0.9; font-weight:600;}
+  .gap-stat-label{margin-top:14px; font-size:0.95rem; color:var(--ink-soft); max-width:24ch;}
+  .gap-body h2{font-size:clamp(1.6rem,2.6vw,2.1rem); margin-bottom:22px; max-width:18ch;}
+  .gap-body p{color:var(--ink-soft); max-width:60ch; margin-bottom:16px; font-size:1.02rem;}
+  .gap-body p strong{color:var(--ink); font-weight:600;}
+  @media(max-width:900px){.gap .wrap{grid-template-columns:1fr;}}
+
+  /* ---------- MOVEMENT / FIRM ---------- */
+  .duo{display:grid; grid-template-columns:1fr 1fr;}
+  .duo-panel{padding:80px 48px;}
+  .duo-panel.movement{background:var(--cream-2);}
+  .duo-panel.firm{background:var(--maroon-deep); color:var(--white);}
+  .duo-panel h3{font-size:1.7rem; margin-bottom:20px;}
+  .duo-panel.firm h3{color:var(--white);}
+  .duo-panel p{max-width:38ch; font-size:1rem;}
+  .duo-panel.movement p{color:var(--ink-soft);}
+  .duo-panel.firm p{color:#E9DCC9;}
+  .duo-panel .role{display:inline-block; margin-top:24px; font-family:'Fraunces',serif; font-style:italic; font-size:1.05rem;}
+  .duo-panel.movement .role{color:var(--maroon);}
+  .duo-panel.firm .role{color:#D8B98B;}
+  @media(max-width:800px){.duo{grid-template-columns:1fr;} .duo-panel{padding:56px 28px;}}
+
+  .whysplit{background:var(--cream); padding:56px 0; border-bottom:1px solid var(--line);}
+  .whysplit .wrap{max-width:820px;}
+  .whysplit p{font-family:'Fraunces',serif; font-style:italic; font-size:1.25rem; color:var(--maroon-deep); line-height:1.5; text-align:center;}
+
+  .split-guide{background:var(--cream); padding:64px 0;}
+  .split-guide .wrap{max-width:1000px;}
+  .split-guide h4{font-size:1.15rem; margin-bottom:28px; color:var(--ink);}
+  .guide-row{display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line);}
+  .guide-row:last-child{border-bottom:1px solid var(--line);}
+  .guide-cell{padding:20px 26px; font-size:0.95rem;}
+  .guide-cell.m{color:var(--ink-soft); border-right:1px solid var(--line);}
+  .guide-cell.f{color:var(--ink);}
+  .guide-cell b{color:var(--maroon-deep); font-weight:600;}
+  @media(max-width:700px){.guide-row{grid-template-columns:1fr;} .guide-cell.m{border-right:none; border-bottom:1px solid var(--line);}}
+
+  /* ---------- SERVICES ---------- */
+  .services{padding:100px 0 80px;}
+  .services > .wrap > h2{font-size:clamp(1.6rem,2.6vw,2.1rem); max-width:16ch; margin-bottom:16px;}
+  .services-sub{color:var(--ink-soft); max-width:56ch; font-size:1rem; margin-bottom:44px;}
+  .services-close{margin-top:36px; font-family:'Fraunces',serif; font-style:italic; color:var(--maroon-deep); font-size:1.15rem; max-width:52ch;}
+  .service-row{
+    display:grid; grid-template-columns:70px 1fr; gap:24px;
+    padding:30px 0; border-top:1px solid var(--line);
+  }
+  .service-row:last-child{border-bottom:1px solid var(--line);}
+  .service-num{font-family:'Fraunces',serif; font-size:1.6rem; color:var(--maroon); font-weight:500;}
+  .service-row h3{font-size:1.2rem; margin-bottom:8px; color:var(--ink);}
+  .service-row p{color:var(--ink-soft); max-width:60ch; font-size:0.98rem;}
+  .service-row h3.one-line{white-space:nowrap; font-size:clamp(0.92rem,4.7vw,1.2rem);}
+  @media(max-width:600px){.service-row{grid-template-columns:1fr; gap:8px;}}
+
+  /* ---------- DONT ---------- */
+  .dont{padding:0 0 100px;}
+  .dont .wrap{max-width:900px;}
+  .dont-box{
+    border:1px solid var(--maroon-deep); padding:40px; position:relative;
+  }
+  .dont-box .mark{font-family:'Fraunces',serif; font-size:2.4rem; color:var(--maroon); line-height:1; margin-bottom:14px;}
+  .dont-box p{color:var(--ink); font-size:1.02rem; max-width:64ch;}
+  .dont-box p + p{margin-top:14px;}
+
+  /* ---------- FOUNDER ---------- */
+  .founder{background:var(--cream-2); padding:100px 0;}
+  .founder .wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:start;}
+  .founder-role{font-size:0.95rem; color:var(--maroon); font-weight:600; margin-bottom:10px;}
+  .founder h2{font-size:clamp(1.7rem,2.8vw,2.3rem); margin-bottom:6px;}
+  .founder-title{font-family:'Fraunces',serif; font-style:italic; color:var(--ink-soft); font-size:1.05rem; margin-bottom:26px; display:block;}
+  .founder-cred{font-size:0.88rem; color:var(--ink-soft); line-height:1.8; border-left:2px solid var(--maroon); padding-left:16px;}
+  .founder-edu{font-style:italic; display:inline-block; margin-top:2px;}
+  .founder-email{margin-top:18px; padding-left:16px;}
+  .founder-email a{font-size:0.92rem; color:var(--maroon-deep); font-weight:600; border-bottom:1px solid var(--maroon);}
+  .founder-story p{color:var(--ink); font-size:1.02rem; margin-bottom:18px; max-width:58ch;}
+  .founder-story blockquote{
+    font-family:'Fraunces',serif; font-style:italic; font-size:1.3rem; color:var(--maroon-deep);
+    margin:28px 0; padding-left:22px; border-left:3px solid var(--maroon); max-width:52ch;
+  }
+  @media(max-width:900px){.founder .wrap{grid-template-columns:1fr;}}
+  .founder-portrait{margin-bottom:28px; max-width:280px;}
+  .founder-portrait img{border:8px solid var(--white); box-shadow:0 18px 36px rgba(74,23,31,0.16);}
+  .founder-inset{margin-top:28px; max-width:220px; transform:rotate(-2deg);}
+  .founder-inset img{border:6px solid var(--white); box-shadow:0 14px 28px rgba(74,23,31,0.16);}
+  .life-block{
+    margin-top:56px; padding-top:48px; border-top:1px solid var(--line);
+    display:grid; grid-template-columns:200px 1fr; gap:36px; align-items:center;
+  }
+  .life-block img{border:6px solid var(--white); box-shadow:0 16px 32px rgba(74,23,31,0.18); transform:rotate(-3deg);}
+  .life-label{font-size:0.78rem; color:var(--maroon); font-weight:600; margin-bottom:10px;}
+  .life-block p{color:var(--ink); font-size:1.02rem; max-width:46ch; margin:0;}
+  .life-block .fine{margin-top:10px; font-family:'Fraunces',serif; font-style:italic; color:var(--maroon-deep); font-size:1rem;}
+  @media(max-width:700px){.life-block{grid-template-columns:1fr;} .life-block img{max-width:200px;}}
+
+  /* ---------- WORK WITH US ---------- */
+  .work{padding:100px 0;}
+  .work .wrap{max-width:1080px; text-align:left;}
+  .work-grid{display:grid; grid-template-columns:1.3fr 0.7fr; gap:56px; align-items:center;}
+  .work-hook{font-family:'Fraunces',serif; font-style:italic; font-size:1.2rem; color:var(--maroon-deep); margin-bottom:36px;}
+  .work-envelope img{max-width:280px; margin:0 auto; transform:rotate(2deg); box-shadow:0 20px 40px rgba(74,23,31,0.16);}
+  @media(max-width:800px){.work-grid{grid-template-columns:1fr;} .work-envelope{order:-1;} .work-envelope img{max-width:200px;}}
+
+  /* ---------- WHY MOVEMENT + FIRM ---------- */
+  .whyfirm{padding:90px 0; background:var(--cream);}
+  .whyfirm .wrap{max-width:820px;}
+  .whyfirm-label{display:block; font-size:0.78rem; font-weight:600; color:var(--maroon); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:14px;}
+  .whyfirm h2{font-size:clamp(1.6rem,2.6vw,2.1rem); margin-bottom:22px; max-width:20ch;}
+  .whyfirm p{color:var(--ink-soft); font-size:1.02rem; margin-bottom:16px; max-width:64ch;}
+  .whyfirm-points{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:36px;}
+  .whyfirm-point h4{font-family:'Fraunces',serif; color:var(--maroon-deep); font-size:1.05rem; margin-bottom:8px;}
+  .whyfirm-point p{font-size:0.92rem; margin:0;}
+  @media(max-width:768px){.whyfirm-points{grid-template-columns:1fr;}}
+
+  /* ---------- FREE VS PAID ---------- */
+  .free-paid{padding:96px 0; background:var(--cream-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .free-paid .wrap{max-width:1080px;}
+  .free-paid-label{display:block; font-size:0.78rem; font-weight:600; color:var(--maroon); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:14px;}
+  .free-paid > .wrap > h2{font-size:clamp(1.9rem,3vw,2.5rem); margin-bottom:36px; max-width:24ch;}
+  .free-paid-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-bottom:72px;}
+  .free-paid-card{padding:34px 32px; border:1px solid var(--line); background:var(--white);}
+  .free-paid-card.firm-card{background:var(--maroon-deep); color:var(--white); border-color:var(--maroon-deep);}
+  .free-paid-kicker{display:block; font-family:'Fraunces',serif; font-size:1.15rem; font-weight:500; color:var(--maroon); margin-bottom:10px;}
+  .firm-card .free-paid-kicker{color:#D8B98B;}
+  .free-paid-card h3{font-size:1.35rem; margin-bottom:16px;}
+  .firm-card h3{color:var(--white);}
+  .free-paid-card p{font-size:0.98rem; color:var(--ink-soft); margin-bottom:16px; max-width:62ch;}
+  .firm-card p{color:#E9DCC9;}
+  .free-paid-card p:last-child{margin-bottom:0;}
+  .mandates{border-top:1px solid var(--line); padding-top:42px; display:grid; grid-template-columns:0.65fr 1.35fr; gap:56px; align-items:start;}
+  .mandates > div:first-child h3{font-size:1.5rem; max-width:16ch; margin-top:4px;}
+  .mandate{display:grid; grid-template-columns:52px 1fr; gap:20px; padding:26px 0; border-top:1px solid var(--line);}
+  .mandate:first-child{padding-top:0; border-top:0;}
+  .mandate-num{font-family:'Fraunces',serif; font-size:1.35rem; color:var(--maroon);}
+  .mandate h4{font-size:1.15rem; margin-bottom:8px; color:var(--maroon-deep);}
+  .mandate p{font-size:0.96rem; color:var(--ink-soft); margin:0; max-width:62ch;}
+  @media(max-width:800px){.free-paid-grid{grid-template-columns:1fr;} .mandates{grid-template-columns:1fr; gap:28px;}}
+
+  /* ---------- PROOF OF WORK & REVIEWS ---------- */
+  .proof{background:var(--cream-2); padding:90px 0; text-align:center;}
+  .proof-label{display:inline-block; font-size:0.78rem; font-weight:600; color:var(--maroon); border:1px solid var(--maroon); padding:4px 12px; border-radius:20px; margin-bottom:16px;}
+  .proof h2{font-size:clamp(1.8rem,3vw,2.4rem); margin-bottom:16px;}
+  .proof-note{color:var(--ink-soft); max-width:70ch; margin:0 auto 40px; font-size:0.98rem; font-style:italic;}
+  .proof-visual{max-width:1000px; margin:0 auto 56px; border-radius:6px; overflow:hidden; box-shadow:0 18px 40px rgba(74,23,31,0.18);}
+  .proof-visual img{width:100%; display:block;}
+  .proof-stat{margin:0 auto 56px; display:inline-flex; align-items:baseline; gap:12px; flex-wrap:wrap; justify-content:center;}
+  .proof-stat .stat-num{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(2.2rem,4vw,3rem); color:var(--maroon-deep);}
+  .proof-stat .stat-label{font-size:0.9rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.03em;}
+  .receipts-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px; text-align:left; align-items:stretch;}
+  .portfolio-card,.review-card{background:var(--white); padding:28px 22px; border-radius:4px; box-shadow:0 12px 28px rgba(74,23,31,0.10); display:flex; flex-direction:column; min-width:0;}
+  .portfolio-card{justify-content:flex-start;}
+  .review-card{justify-content:space-between;}
+  .portfolio-loc{font-size:0.72rem; color:var(--maroon); font-weight:600; letter-spacing:0.02em; margin-bottom:10px;}
+  .portfolio-card h3{font-size:1.18rem; margin-bottom:18px;}
+  .portfolio-row{margin-bottom:14px;}
+  .portfolio-row:last-child{margin-bottom:0;}
+  .portfolio-row .tag{display:block; font-size:0.7rem; font-weight:600; color:var(--maroon-deep); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:4px;}
+  .portfolio-row p{font-size:0.86rem; color:var(--ink-soft); margin:0; line-height:1.52;}
+  .review-quote{font-family:'Fraunces',serif; font-style:italic; color:var(--ink); font-size:0.9rem; line-height:1.55; margin:0 0 18px;}
+  .review-shot{margin-bottom:18px; border-radius:4px; overflow:hidden; box-shadow:0 10px 22px rgba(74,23,31,0.14);}
+  .review-shot img{width:100%; display:block;}
+  .review-attrib{font-size:0.84rem; font-weight:600; color:var(--maroon-deep); margin-bottom:6px; line-height:1.45;}
+  .review-outcome{font-size:0.76rem; color:var(--maroon); border-top:1px solid var(--line); padding-top:10px; margin-top:auto; line-height:1.45;}
+  @media(max-width:1100px){.receipts-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media(max-width:640px){.receipts-grid{grid-template-columns:1fr;}}
+
+  /* ---------- COMMERCIAL OUTCOMES FEATURE ---------- */
+  .outcomes{max-width:1040px; margin:0 auto 64px; padding:44px 28px 30px; background:var(--white); border:1px solid var(--line); border-radius:6px; box-shadow:0 18px 40px rgba(74,23,31,0.12); position:relative;}
+  .outcomes::before{content:""; position:absolute; left:28px; right:28px; top:0; height:4px; background:var(--maroon);}
+  .outcomes-title{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(1rem,2.4vw,1.35rem); letter-spacing:0.16em; color:var(--maroon-deep); margin:0 0 22px;}
+  .outcomes .proof-stat{display:flex; flex-direction:column; align-items:center; gap:2px; margin:0 auto 34px;}
+  .outcomes .outcomes-over{font-size:0.82rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); font-weight:400;}
+  .outcomes .proof-stat .stat-label{text-transform:none; letter-spacing:0.01em; font-size:1rem; margin-top:2px;}
+  .outcome-legend{display:flex; flex-wrap:wrap; gap:8px 10px; justify-content:center; margin:0 auto 26px; padding:0; list-style:none;}
+  .outcome-grid{display:grid; grid-template-columns:1fr; gap:16px; margin:0; padding:0; list-style:none; text-align:left;}
+  @media(min-width:700px){.outcome-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media(min-width:1000px){.outcome-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+  .outcome{background:var(--cream); border:1px solid var(--line); border-radius:4px; padding:20px 20px 18px; display:flex; flex-direction:column; gap:6px; min-width:0;}
+  .kind{display:inline-block; align-self:flex-start; font-size:0.66rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; padding:3px 10px; border-radius:20px; line-height:1.4;}
+  .kind-approved{border:1px solid var(--maroon); color:var(--maroon);}
+  .kind-funding{background:var(--maroon); color:var(--white); border:1px solid var(--maroon);}
+  .kind-seed{background:var(--cream-2); color:var(--maroon-deep); border:1px solid var(--line);}
+  .kind-pipeline{border:1px dashed var(--maroon-deep); color:var(--maroon-deep);}
+  .outcome-amount{font-family:'Fraunces',serif; font-weight:600; font-size:clamp(1.55rem,3vw,2rem); color:var(--maroon-deep); line-height:1.15; overflow-wrap:anywhere;}
+  .outcome-desc{font-size:0.88rem; color:var(--ink-soft); line-height:1.45;}
+  .outcome-country{font-size:0.74rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--maroon); border-top:1px solid var(--line); padding-top:9px; margin-top:auto;}
+  .outcomes-countries{display:flex; flex-wrap:wrap; gap:8px 18px; justify-content:center; align-items:center; margin:28px 0 6px; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--maroon-deep); font-weight:600;}
+  .outcomes-countries .lbl{font-weight:400; letter-spacing:0.04em; text-transform:none; color:var(--ink-soft); font-style:italic;}
+  .outcomes-countries .dot{width:5px; height:5px; border-radius:50%; background:var(--maroon); display:inline-block; margin-right:7px; vertical-align:middle;}
+  .outcomes-note{font-size:0.76rem; line-height:1.55; color:var(--ink-soft); max-width:78ch; margin:10px auto 0; text-align:center;}
+
+  /* ---------- TRUSTED-BY STRIP ---------- */
+  .trusted{background:var(--cream); padding:34px 0 36px; text-align:center; border-bottom:1px solid var(--line);}
+  .trusted-line{font-size:0.74rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-soft); font-weight:600; margin:0 0 22px;}
+  .trusted-img{display:block; width:100%; max-width:860px; margin:0 auto; aspect-ratio:2038/430; object-fit:cover; object-position:50% 47.5%; mix-blend-mode:multiply;}
+  /* ---------- WORK CTA ---------- */
+  .btn-primary.btn-cta{display:inline-flex; align-items:center; gap:12px; text-align:left; line-height:1.35;}
+  .btn-cta .arrow{display:inline-block; font-size:1.15em; transition:transform .25s ease;}
+  .btn-cta:hover .arrow, .btn-cta:focus-visible .arrow{transform:translateY(4px);}
+  @media(prefers-reduced-motion:reduce){.btn-cta .arrow{transition:none;} .btn-cta:hover .arrow, .btn-cta:focus-visible .arrow{transform:none;}}
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--maroon-deep); color:var(--white); padding:64px 0 36px;}
+  footer .wrap{display:flex; flex-direction:column; align-items:flex-start; gap:22px;}
+  footer .flogo{display:flex; align-items:center; gap:14px;}
+  footer .flogo img{width:46px; height:46px; border-radius:50%;}
+  footer .flogo span{font-family:'Fraunces',serif; font-size:1.25rem;}
+  footer .tagline{font-family:'Fraunces',serif; font-style:italic; font-size:1.15rem; color:#E9DCC9; max-width:40ch;}
+  .fcontact-grid{display:flex; gap:56px; flex-wrap:wrap;}
+  .fcontact-block{display:flex; flex-direction:column; gap:6px; font-size:0.9rem;}
+  .fcontact-label{font-size:0.78rem; text-transform:none; color:#B7A78F; margin-bottom:2px;}
+  .fcontact-block a{color:#D8CBB6; transition:color .2s;}
+  .fcontact-block a:hover{color:var(--white);}
+  .socials{display:flex; align-items:center; gap:12px; margin-top:2px;}
+  .social-link{width:38px; height:38px; display:inline-flex; align-items:center; justify-content:center; border:1px solid rgba(216,203,182,.45); border-radius:50%; color:#D8CBB6; transition:color .2s, background .2s, border-color .2s, transform .2s;}
+  .social-link:hover{color:var(--maroon-deep); background:var(--white); border-color:var(--white); transform:translateY(-2px);}
+  .social-link svg{width:18px; height:18px; fill:currentColor;}
+  .social-label{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
+  .fmeta{font-size:0.8rem; color:#B7A78F; margin-top:8px;}
+
+/* Receipts Room: keep case studies in a clean 4-up row, then stack reviews independently to eliminate large blank areas. */
+.receipts-grid{display:block;}
+.receipts-grid > .portfolio-card{display:block; margin:0;}
+.case-studies-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px; margin-bottom:22px;}
+.review-columns{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; align-items:start;}
+.review-stack{display:flex; flex-direction:column; gap:22px; min-width:0;}
+.review-card{height:auto; min-height:0;}
+@media(max-width:1000px){.case-studies-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.review-columns{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:640px){.case-studies-grid,.review-columns{grid-template-columns:1fr;}}
+
+  .email-icon{width:16px;height:16px;fill:currentColor;vertical-align:-3px;margin-right:7px;}
+ 
+  .checks{gap:8px;}
+  .check{padding:10px 12px;min-height:42px;}
+  .check span{font-size:12.5px;letter-spacing:.015em;}
+  #bwafaForm{scroll-margin-top:22px;}
+  .fineprint em{font-style:italic;}
+</style>
+</head>
+<body>
+<header>
+<nav class="wrap">
+<a class="brand" href="#top">
+<img alt="BWAFA logo" src="https://raw.githubusercontent.com/BWAFA-Global/BWAFA.com/main/image-01-1bfacd54218ec7df.webp"/>
+<span>BWAFA</span>
+</a>
+<div class="navlinks">
+<a href="#gap">Who We Are</a>
+<a href="#duo">Movement &amp; Firm</a>
+<a href="#services">What We Do</a>
+<a href="#proof">Proof of Work</a>
+<a href="#founder">Founder</a>
+</div>
+<a class="navcta" href="#protect-your-equity">Protect Your Equity</a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-btn" type="button"><span></span><span></span><span></span></button>
+</nav>
+</header>
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+<div class="wrap">
+<div class="hero-copy">
+<span class="hero-tag">BWAFA (B-wah-fah)</span>
+<h1>Building With Africans,<br/>For Africa.</h1>
+<p class="lead"><strong>BWAFA exists to help African builders strengthen what they create, communicate its value and protect what they own.</strong></p>
+<p class="lead">Through a Pan-African Movement and a specialist Firm, we bring collective action and professional execution together to help ventures build on stronger foundations.</p>
+<p class="lead"><strong>Africa is building. But who gets to own the value?</strong></p>
+<p class="lead">Across the continent and its Diaspora, African builders are creating businesses, products and ideas with real economic potential. Yet building something valuable and being positioned to capture its full value are two different things.</p>
+<p class="lead">BWAFA exists to close that gap. Through a Pan-African Movement and a specialist Firm, we bring builders together and strengthen the commercial narratives, business structures and contractual foundations that help ventures earn recognition, protect ownership and grow on stronger terms. <em>Build the asset. Keep the wheel.</em></p>
+<p class="sub">The Movement creates the authority. The Firm converts it.</p>
+<div class="hero-ctas">
+<a class="btn-primary" data-route="Firm" href="#protect-your-equity">Build with the Firm</a>
+<a class="btn-secondary" data-route="Movement" href="#protect-your-equity">Join the Movement</a>
+</div>
+</div>
+<div class="hero-art">
+<div class="frame"><img alt="BWAFA — Building With Africans, For Africa, continental motif" src="https://raw.githubusercontent.com/BWAFA-Global/BWAFA.com/main/image-02-6b8b59f0cac5097c.webp"/></div>
+</div>
+</div>
+</section>
+<!-- TRUSTED BY -->
+<section class="trusted" aria-label="Businesses that have worked with BWAFA">
+<div class="wrap">
+<p class="trusted-line">Trusted by businesses across Africa</p>
+<img alt="Logos of Corafine Prints, Neptune Enterprise and Kultivate Africa" class="trusted-img" loading="lazy" src="https://raw.githubusercontent.com/BWAFA-Global/BWAFA.com/main/Businesses_Logo_.PNG"/>
+</div>
+</section>
+
+<!-- AT A GLANCE -->
+<section class="glance">
+<div class="wrap">
+<div class="glance-item">
+<div class="label">Identity</div>
+<div class="val">A Pan-African Movement &amp; A Pan-African Firm. Built around a simple conviction: African builders should be able to turn what they create into assets that command recognition, protect ownership and stand the test of time.</div>
+</div>
+<div class="glance-item">
+<div class="label">Model</div>
+<div class="val"><strong>Collective conviction. Specialist execution.</strong><br/>The Movement brings builders together around shared knowledge, visibility, collaboration and action. The Firm provides the paid, specialist work that strengthens ventures commercially, strategically and structurally.</div>
+</div>
+<div class="glance-item">
+<div class="label">Core Output</div>
+<div class="val"><strong>Businesses that can stand up to scrutiny.</strong><br/>Clearer narratives. Sounder commercial models. Defensible positioning. Contracts and terms built to protect what matters. The structure behind the ambition.</div>
+</div>
+<div class="glance-item">
+<div class="label">Who It's For</div>
+<div class="val"><strong>African builders, across the continent and the Diaspora.</strong><br/>Founders, creatives, business leaders, organisations and emerging builders creating products, companies, ideas and opportunities that deserve to go further.</div>
+</div>
+<div class="glance-item">
+<div class="label">Outcome</div>
+<div class="val"><strong>Build with clarity. Grow with leverage. Keep what you build.</strong><br/>Make your value understood. Strengthen your position. Pursue opportunities without losing sight of the ownership, independence and legacy you are building towards.</div>
+</div>
+</div>
+</section>
+<!-- THE GAP -->
+<section class="gap" id="gap">
+<div class="wrap">
+<div class="gap-figures">
+<div class="gap-stat">3%</div>
+<div class="gap-stat-label">Africa's share of global GDP, unmoved for two decades, despite holding 30% of the world's mineral reserves.</div>
+</div>
+<div class="gap-body">
+<h2>The gap we close</h2>
+<p>By 2030, four in ten of the world’s young people will be African. By 2040, Africa is projected to have the world’s largest working-age population. That is a generation of people building businesses, creating products, shaping culture and solving problems at scale.</p>
+<p>The building is happening. The question is whether the value being created is being properly recognised, protected and rewarded.</p>
+<p>A business can have paying customers, strong margins and a product people genuinely need, yet struggle to secure the right partnership or funding. Its pitch may fail to communicate the strength of its model. Its commercial terms may leave too much exposed. Its brand may borrow language that makes it harder to distinguish what it does exceptionally well. Its grant proposal may tell a familiar story while missing the evidence that makes this particular venture worth backing.</p>
+<p>And these weaknesses do not only surface in capital rooms. They show up in pricing decisions, supplier agreements, distribution deals, daily communications and opportunities that become harder to negotiate when the underlying structure is not sound.</p>
+<p>What is built on the ground should have the structure to stand up in the room, the leverage to negotiate on fairer terms, and the foundations to keep growing beyond its founder’s immediate reach. Build the value. Make it legible. Protect what it can become.</p>
+<p>That is the gap BWAFA exists to close: the distance between what African builders have created and the value they can credibly communicate, commercially protect and carry forward.</p>
+</div>
+</div>
+</section>
+<!-- MOVEMENT / FIRM -->
+<section class="duo" id="duo">
+<div class="duo-panel movement">
+<h3>The Movement</h3>
+<p>We call ourselves the Tribe. Builders, founders, creatives, and those who stopped waiting for permission.</p>
+<p>Through Roundtables, shared knowledge, real conversations and collaborative action, we bring African builders closer to the people, perspectives and opportunities that help them grow. Because building shouldn’t mean figuring everything out alone, and Africa’s business doesn’t need a translator. It needs backing.</p>
+<span class="role">This is where collective authority takes shape.</span>
+</div>
+<div class="duo-panel firm">
+<h3>The Firm</h3>
+<p>We strengthen the structure behind ambitious ventures: rebuilding narratives, stress-testing commercial models, sharpening positioning, and reviewing and drafting contractual terms to help protect what matters.</p>
+<p>Because a strong business deserves more than a persuasive pitch. It needs sound commercial foundations, a defensible position and the structure to grow without compromising the people who built it.</p>
+<span class="role">This is where authority turns into currency.</span>
+</div>
+</section>
+<section class="whysplit">
+<div class="wrap">
+<p>Conviction without structure gets exploited. Structure without conviction gets ignored. If it's telling you what's wrong, that's the Movement talking. If it's the one in the room fixing it, that's the Firm. We were never going to pick a side.</p>
+</div>
+</section>
+<!-- WHY MOVEMENT + FIRM -->
+<section class="whyfirm">
+<div class="wrap">
+<span class="whyfirm-label">Why Movement + Firm?</span>
+<h2>Because playing small was never on the table.</h2>
+<p>Building With Africans, For Africa. Read that back slowly. That's not a name for something built to stay small, it's a whole building, with Africans in it, doing the work. Nobody holds up a building like that alone, and nobody holds it up on conviction alone either.</p>
+<p>Bridging what's actually built on the ground with what capital markets recognize takes more than one seat at the table. It takes the capacity to occupy several, at once: the Movement to keep the culture and the conviction honest, the Firm to make sure the paperwork can survive the room it walks into. Africa has gone beyond laying low. This is what showing up at full size looks like.</p>
+<div class="whyfirm-points">
+<div class="whyfirm-point">
+<h4>Scale needs structure</h4>
+<p>A movement without a firm behind it stays a vibe. We built both, so the energy has somewhere to land.</p>
+</div>
+<div class="whyfirm-point">
+<h4>Ownership is the whole point</h4>
+<p>Capital means nothing if you hand over the wheel to get it. The Firm exists so you don't have to.</p>
+</div>
+<div class="whyfirm-point">
+<h4>Credibility compounds</h4>
+<p>Every deck that holds, every contract that doesn't get contested, raises what the next founder in the Tribe gets taken seriously for.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FREE VS PAID -->
+<section class="free-paid" id="free-paid">
+<div class="wrap">
+<span class="free-paid-label">The Movement &amp; The Firm</span>
+<h2>What’s FREE vs. What’s PAID</h2>
+<div class="free-paid-grid">
+<article class="free-paid-card movement-card">
+<span class="free-paid-kicker">The Movement</span>
+<h3>Open. Collective. Pan-African.</h3>
+<p>The Movement is open. Driven by the Tribe, it is our Pan-African collective of builders, founders, and creators; PEOPLE sharing knowledge, momentum and shared authority across the continent through real action and visible impact.</p>
+</article>
+<article class="free-paid-card firm-card">
+<span class="free-paid-kicker">The Firm</span>
+<h3>A paid practice. Built for the heavy labour.</h3>
+<p>The Firm is a paid practice. It is a dedicated team of specialists putting in the heavy labour behind closed doors to ensure your venture is built to last, investment-ready, and audit-ready. We do not do free deck reviews, quick favours, or casual strategy calls. If we are digging into your numbers, contracts, or pitch decks, it is a paid engagement, every single time.</p>
+<p>We charge for our expertise because high-level structural work requires real labour, and feeding the brain trust behind that work is how we keep building across Africa.</p>
+</article>
+</div>
+<div class="mandates">
+<div>
+<span class="free-paid-label">Our Advisory Mandates</span>
+<h3>Structural work with a clear mandate.</h3>
+</div>
+<div class="mandate-list">
+<article class="mandate">
+<span class="mandate-num">01</span>
+<div>
+<h4>Commercial Structure Audit</h4>
+<p>A focused deep-dive of your business structure and deal terms. We stress-test your go-to-market model to find operational leaks, fix bad terms before partners exploit them and refine your positioning so you walk into capital rooms with total control.</p>
+</div>
+</article>
+<article class="mandate">
+<span class="mandate-num">02</span>
+<div>
+<h4>Retained Growth Advisory</h4>
+<p>Long-term, direct, ongoing partner-level backing for scaling companies. We step into your corner to guide expansion moves, structure major partnerships, refine pricing strategies, investor readiness, and ensure your business stays fundable as you grow across markets.</p>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICES -->
+<section class="services" id="services">
+<div class="wrap">
+<h2>What we do</h2>
+<p class="services-sub">The Firm brings commercial thinking, strategic positioning and legal intelligence to the work of building stronger ventures. Six specialist lanes, shaped around what your business needs to move forward.</p>
+<div class="service-row">
+<div class="service-num">01</div>
+<div>
+<h3>Brand Narrative &amp; Pitch Clarity</h3>
+<p>We turn what your company actually does, why it matters and what sets it apart into a clear, credible narrative that holds up under scrutiny.</p>
+</div>
+</div>
+<div class="service-row">
+<div class="service-num">02</div>
+<div>
+<h3>Commercial Architecture</h3>
+<p>We examine how your business makes money, where margins are under pressure, how your pricing holds up and whether the model supports the growth you’re pursuing.</p>
+</div>
+</div>
+<div class="service-row">
+<div class="service-num">03</div>
+<div>
+<h3>Communication Audits</h3>
+<p>From your pitch deck to your DMs, we examine how your business communicates across the places that shape perception, identifying what strengthens your credibility, what weakens it and what needs to change.</p>
+</div>
+</div>
+<div class="service-row">
+<div class="service-num">04</div>
+<div>
+<h3 class="one-line">Grant, Pitch &amp; Investor Narrative</h3>
+<p>Not just pitch decks, though those get fixed too. We develop funding applications and proposals around your actual strengths, supporting evidence and intended impact, giving reviewers a clear reason to take your venture seriously.</p>
+</div>
+</div>
+<div class="service-row">
+<div class="service-num">05</div>
+<div>
+<h3>Legal Intelligence Applied</h3>
+<p>We review, draft and pressure-test contractual terms to help identify overlooked risks, protect your interests and strengthen your position before the stakes get higher.</p>
+</div>
+</div>
+<div class="service-row">
+<div class="service-num">06</div>
+<div>
+<h3>EdTech &amp; Learning Design</h3>
+<p>We design learning experiences, curricula and educational platforms around how people actually learn, participate and progress, not simply how much content they can consume.</p>
+</div>
+</div>
+<p class="services-close"><strong>The outcome:</strong> A business whose value is easier to understand, whose positioning competitors can’t easily copy and whose commercial foundations are better equipped to support its next stage. Work built around what is actually true about your business. No borrowed voice. Period.</p>
+</div>
+</section>
+<!-- WHAT WE DON'T DO -->
+<section class="dont">
+<div class="wrap">
+<div class="dont-box">
+<div class="mark">What we don't do</div>
+<p>We review, draft and restructure. We do not act as your registered legal counsel or file legal documents on your behalf. Where a matter requires formal legal representation or jurisdiction-specific legal services, a licensed lawyer must handle that work.</p>
+<p>We can help identify the right legal expertise for your situation &amp; recommend an appropriate firm in your country, where possible.</p>
+<p>Our role is to help you understand the issues, strengthen the work within our scope and approach the right legal professional better prepared. Because the terms you sign can shape what you own, what you owe and what you can do next.</p>
+</div>
+</div>
+</section>
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+<div class="wrap">
+<div class="founder-side">
+<div class="founder-portrait"><img alt="Mandy Morah, Founder and Lead Architect of BWAFA" src="https://raw.githubusercontent.com/BWAFA-Global/BWAFA.com/main/image-03-9c33f7b6d94a81ee.webp"/></div>
+<h2>Mandy Morah</h2>
+<span class="founder-title">Founder &amp; Lead Architect, BWAFA</span>
+<div class="founder-cred">
+          Legal Counsel &amp; Commercial Architect<br/>
+          NAWLI — Narrative Architect with Legal Intelligence<br/>
+<span class="founder-edu">First Class Honours, Law and Business (B.L)<br/>
+          Nottingham Law School &amp; Nottingham Business School, Nottingham Trent University</span>
+</div>
+<div class="founder-inset"><img alt="BWAFA notebook, Narrative Architecture, Action and Impact" src="https://raw.githubusercontent.com/BWAFA-Global/BWAFA.com/main/image-04-a3f0e4295c81117c.webp"/></div>
+<div class="founder-email"><a href="mailto:hello@mandymorah.com">hello@mandymorah.com</a></div>
+</div>
+<div class="founder-story">
+<span class="founder-role">The mind behind BWAFA, in service of the institution</span>
+<p style="margin-top:14px;">This isn't a personality spotlight. It's context for how BWAFA thinks, decides, and advocates for African ventures.</p>
+<p>Long before BWAFA had a name, Our Founder was the person who noticed when something didn't add up: a conversation tilted against the quieter voice, a process that rewarded presentation over substance, a decision that treated African builders as risk before it recognised their rigour. The instinct was never theatrical. It was practical, persistent, and hard to switch off, the kind of thing that got her called "firm and instructive" by a courtroom panel before she'd even finished the degree.</p>
+<p>Over time, that attention moved from individual moments to a pattern worth naming. Strong ventures kept struggling to be legible to capital. Founder stories kept getting forced into borrowed language. Contracts and commercial structures kept arriving late, once the leverage was already gone. BWAFA was built in response to that pattern, not as commentary from the sidelines, but as operating work done alongside founders.</p>
+<blockquote>Cultural authority, paired with commercial precision. That's the whole method.</blockquote>
+<p>The founder story matters only because it explains that method: clearer decks, sharper investor narratives, revenue architecture that holds, and legal intelligence applied early enough to protect ownership while growth is still being designed, not after the leverage is gone.</p>
+<div class="life-block">
+<img alt="Mandy Morah, off duty" src="https://raw.githubusercontent.com/BWAFA-Global/BWAFA.com/main/image-05-36a0514f7474d3d7.webp"/>
+<div>
+<div class="life-label">Work-Life Integration</div>
+<p>Yeah, our founder works and plays hard too. A bit of a goofy-goof yet quite grounded when it’s time to wheel. She believes it’s rarely a "balance" when you're up building at 2am &amp; somehow show up at 7am blazing everywhere needed. Predictable patterns tend to produce short-term results. The unconventional hours &amp; patterns are usually where the long-term ones come from.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PROOF OF WORK & TRIBE REVIEWS -->
+<section class="proof" id="proof">
+<div class="wrap">
+<span class="proof-label">Proof of Work</span>
+<h2>The Receipts Room</h2>
+<p class="proof-note">PEOPLE, ACTIONS, OUTCOMES &amp; IMPACTS</p>
+<section class="outcomes" aria-labelledby="outcomesTitle">
+<h3 class="outcomes-title" id="outcomesTitle">COMMERCIAL OUTCOMES ACROSS AFRICA</h3>
+<div class="proof-stat">
+<span class="outcomes-over">Over</span>
+<span class="stat-num">$40k+</span>
+<span class="stat-label">In funding outcomes &amp; investment commitments</span>
+</div>
+<ul class="outcome-legend" aria-label="Outcome types">
+<li><span class="kind kind-approved">Grant approved or awarded</span></li>
+<li><span class="kind kind-funding">Grant funding</span></li>
+<li><span class="kind kind-seed">Seed investment</span></li>
+<li><span class="kind kind-pipeline">Committed investment pipeline</span></li>
+</ul>
+<ul class="outcome-grid">
+<li class="outcome"><span class="kind kind-approved">Grant approved</span><span class="outcome-amount">₦4,000,000</span><span class="outcome-desc">Grant approved</span><span class="outcome-country">Nigeria</span></li>
+<li class="outcome"><span class="kind kind-approved">Grant approved</span><span class="outcome-amount">₦5,000,000</span><span class="outcome-desc">Tony Elumelu Foundation grant approved</span><span class="outcome-country">Nigeria</span></li>
+<li class="outcome"><span class="kind kind-funding">Grant funding</span><span class="outcome-amount">KSh 3,420,000</span><span class="outcome-desc">Grant funding</span><span class="outcome-country">Kenya</span></li>
+<li class="outcome"><span class="kind kind-seed">Seed investment</span><span class="outcome-amount">$2,000</span><span class="outcome-desc">Seed investment</span><span class="outcome-country">Kenya</span></li>
+<li class="outcome"><span class="kind kind-pipeline">Committed pipeline</span><span class="outcome-amount">FRw 11,600,000</span><span class="outcome-desc">Committed investment pipeline</span><span class="outcome-country">Rwanda</span></li>
+<li class="outcome"><span class="kind kind-approved">Grant awarded</span><span class="outcome-amount">GH₵68,000</span><span class="outcome-desc">Grant award</span><span class="outcome-country">Ghana</span></li>
+</ul>
+<p class="outcomes-countries"><span class="lbl">Featured engagements in</span><span><i class="dot"></i>Nigeria</span><span><i class="dot"></i>Kenya</span><span><i class="dot"></i>Rwanda</span><span><i class="dot"></i>Ghana</span></p>
+<p class="outcomes-note">Countries shown are those of the featured engagements. Each figure is shown in its original currency, the $40k+ headline is the combined USD equivalent of these outcomes and commitments.</p>
+</section>
+<div class="receipts-grid"><div class="case-studies-grid"><div class="portfolio-card">
+<div class="portfolio-loc">Nigeria · Apparel &amp; Retail</div>
+<h3>Apparel &amp; Retail Business</h3>
+<div class="portfolio-row"><span class="tag">The Problem</span><p>Strong sales, but zero written contract structure between retail and manufacturing. Money was invisibly leaking.</p></div>
+<div class="portfolio-row"><span class="tag">The Fix</span><p>Drafted clean intra-entity agreements and aligned their commercial setup with institutional grant standards.</p></div>
+<div class="portfolio-row"><span class="tag">The Result</span><p>₦4,000,000 grant approved via the Seed Gems Foundation and cash flow leaks controlled.</p></div>
+</div><div class="portfolio-card">
+<div class="portfolio-loc">Kenya · Supply Chain &amp; Operations</div>
+<h3>Supply Chain &amp; Operations Business</h3>
+<div class="portfolio-row"><span class="tag">The Problem</span><p>Profitable $22,000 ARR operation, but their capital strategy relied on heavy debt terms that choked cash flow and scared growth partners away.</p></div>
+<div class="portfolio-row"><span class="tag">The Fix</span><p>Rebuilt their commercial setup and split logistics assets from processing operations.</p></div>
+<div class="portfolio-row"><span class="tag">The Result</span><p>Secured KSh 3,420,000 in grant funding and closed a $2k seed round without giving up founder control.</p></div>
+</div><div class="portfolio-card">
+<div class="portfolio-loc">Rwanda · Technology-Enabled Commerce</div>
+<h3>Technology-Enabled Commerce Business</h3>
+<div class="portfolio-row"><span class="tag">The Problem</span><p>Spent pitches explaining code instead of showing how the business actually makes money.</p></div>
+<div class="portfolio-row"><span class="tag">The Fix</span><p>Stripped the fluff. Rebuilt the deck around market positioning, clear cash flow, and risk control.</p></div>
+<div class="portfolio-row"><span class="tag">The Result</span><p>Closed core regional bank partnership and opened an investment pipeline with FRw 11,600,000 committed.</p></div>
+</div><div class="portfolio-card">
+<div class="portfolio-loc">Ghana · Consumer Goods</div>
+<h3>Consumer Goods Business</h3>
+<div class="portfolio-row"><span class="tag">The Problem</span><p>Stuck selling in local markets with no leverage to negotiate larger retail distribution deals.</p></div>
+<div class="portfolio-row"><span class="tag">The Fix</span><p>Set up commercial distribution agreements and structured supplier contracts.</p></div>
+<div class="portfolio-row"><span class="tag">The Result</span><p>Locked in retail distribution across Ghana and West Africa while keeping 100% equity.</p></div>
+</div></div><div class="review-columns"><div class="review-stack"><div class="review-card">
+<p class="review-quote">"Most people tell you what you want to hear. Mandy tells you where your business is losing money. When our TEF grant approval came through, the first person my co-founder and I messaged was Mandy. Africa has a lot of people talking, but very few who actually know how to build real commercial structures so institutions take you seriously. BWAFA restructured our model in weeks. We didn't just secure the capital. We kept full control of our company.”</p>
+<div class="review-shot"><img alt="WhatsApp message from a client confirming a Tony Elumelu Foundation grant approval in Nigeria." src="https://raw.githubusercontent.com/BWAFA-Global/BWAFA.com/main/file_0000000034d4824392b40ce51a580015.jpg"/></div>
+<div class="review-attrib">CEO — Nigeria</div>
+<div class="review-outcome">Tony Elumelu Foundation grant approved.</div>
+</div><div class="review-card">
+<p class="review-quote">"I thought BWAFA was just another online group. Then I got real direction. I joined during Shop African Week just looking to learn. I ended up winning the cash prize, at some point I booked an advisory session. That was when I realized I was severely undercharging. 6 weeks after fixing my pricing model, I closed my biggest client yet."</p>
+<div class="review-attrib">Creative Director — Nigeria</div>
+<div class="review-outcome">Shop African Week cash prize winner &amp; the Firm’s client</div>
+</div><div class="review-card"><p class="review-quote">"From my experience with them, BWAFA gives you structure long after the applause dies down. Winning the Africa Grants Award was great, but BWAFA showed us what to do next. They helped us manage the capital so we didn't waste it on random expenses. If you want to build something that actually lasts, get them on your team."</p><div class="review-attrib">Founder — Ghana</div><div class="review-outcome">Africa Grants Award &amp; GH₵68,000 grant award</div></div></div><div class="review-stack"><div class="review-card">
+<p class="review-quote">"They don't just review contracts; they stop you from signing away your life. Before BWAFA, our contracts were just templates from Google. During our audit, Mandy spotted a clause in an early deal that would have stripped us of our IP rights the second we scaled past $10,000. That single catch saved my company. Straight to the point, zero confusion."</p>
+<div class="review-shot"><img alt="Commercial agreement on an iPad with BWAFA audit note: Clause 4.2 flagged, IP rights shielded prior to scaling past $10,000." src="https://raw.githubusercontent.com/BWAFA-Global/BWAFA.com/main/image-08-3e8f7db5a5fd9b9e.webp"/></div>
+<div class="review-attrib">Founder — Kenya</div>
+<div class="review-outcome">Contract Architecture &amp; IP Protection Secured.</div>
+</div><div class="review-card">
+<p class="review-quote">"As a startup, we have always known that winning investors’ confidence can be tricky. They can be nodding along and still turn you down, and that is disappointing. Without giving out much, I’ll say that BWAFA does a lot for Africans who want to build real, lasting companies. Tested, approved, trusted."</p>
+<div class="review-attrib">Technology Designer — Nigeria</div>
+<div class="review-outcome">Venture Building &amp; Product Advisory</div>
+</div></div><div class="review-stack"><div class="review-card">
+<p class="review-quote">"BWAFA does not just prepare you for investors; they fix how your business actually makes money day-to-day. I got real direction. We were moving quite well but supplier costs were eating every Naira of profit before it even hit our account. The BWAFA team came in, renegotiated our supplier contracts, and improved how we price and package our inventory. Within three months, our profit margins jumped, we opened two new distribution hubs in Nigeria, and we stopped running a high-revenue business that was secretly broke."</p>
+<div class="review-attrib">Managing Director — Nigeria</div>
+<div class="review-outcome">Supply Chain &amp; Margin Restructure</div>
+</div><div class="review-card">
+<p class="review-quote">"Building in Kigali, it's easy to feel like you have to copy Western patterns. Working with BWAFA was different. Since then we’ve closed on our biggest client yet and focused on what actually makes us unpredictable to competitors. Our sessions are fabulous, very humbling as I take away much, even with my level of expertise."</p>
+<div class="review-attrib">Jean-Luc N. — Kigali, Rwanda</div>
+<div class="review-outcome">Strategic Advisory &amp; Market Positioning</div>
+</div><div class="review-card">
+<p class="review-quote">"The first time I came across BWAFA here on instagram. I was curious but I’m a builder who moved from America to Nigeria, so willing to connect &amp; build with fellow likeminded Founders. I assumed it was a networking community, but working with the BWAFA team truly changed how we run our operations locally. They helped us navigate the regulatory terrain, fix our local supplier contracts &amp; restructure our pricing so we weren't burning cash trying to adapt to the market. Moving back to build on the continent is tough, but BWAFA (both as a movement &amp; firm) has become a big part of us. No more losing our minds."</p>
+<div class="review-attrib">Co-Founder — Nigeria</div>
+<div class="review-outcome">Diaspora Builder &amp; Operational Restructure</div>
+</div></div></div></div>
+</div>
+</section>
+<!-- WORK WITH US -->
+<section class="work" id="work">
+<div class="wrap">
+<div class="work-grid">
+<div>
+<h2><span>Ready to work</span> <span>with us</span></h2>
+<p class="work-hook">You bring the venture. We bring the structure. No performance necessary.</p>
+<div class="steps">
+<div class="step">
+<span class="n">1</span>
+<p>Tell us where the weak point is: pitch, revenue, contracts or grant strategy.</p>
+</div>
+<div class="step">
+<span class="n">2</span>
+<p>Send over what you've got, deck, model, or agreement. No need to make it pretty first, that’s our job.</p>
+</div>
+<div class="step">
+<span class="n">3</span>
+<p>We fix the structural problem together, not just the line that's embarrassing you in the room.</p>
+</div>
+</div>
+<a class="btn-primary btn-cta" href="#protect-your-equity">Protect Your Equity. Build What Lasts. <span aria-hidden="true" class="arrow">↓</span></a>
+</div>
+<div class="work-envelope">
+<img alt="BWAFA card" src="https://raw.githubusercontent.com/BWAFA-Global/BWAFA.com/main/image-09-2192e91161f8e5a8.webp"/>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROTECT YOUR EQUITY: refined form integrated into the BWAFA website -->
+<section id="protect-your-equity" aria-labelledby="pye-title">
+<style>
+
+  #protect-your-equity{
+    --cream:#F6EFE4;
+    --cream-deep:#EFE5D3;
+    --maroon:#5C1F1F;
+    --maroon-deep:#3E1414;
+    --ink:#2B1A14;
+    --grey:#6B5F52;
+  }
+  #protect-your-equity *{box-sizing:border-box;}
+  #protect-your-equity{
+    margin:0;
+    background:var(--cream);
+    font-family:"Karla",sans-serif;
+    color:var(--ink);
+  }
+  #protect-your-equity .pye-wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:48px 26px 80px;
+  }
+  #protect-your-equity .logo{
+    display:block;
+    margin:0 auto 24px;
+    width:96px;
+    height:96px;
+    border-radius:50%;
+  }
+  #protect-your-equity .eyebrow{
+    display:block;
+    margin:0 auto 22px;
+    width:fit-content;
+    border:1.5px solid var(--maroon);
+    color:var(--maroon);
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    padding:8px 22px;
+    border-radius:999px;
+  }
+  #protect-your-equity h1{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:32px;
+    line-height:1.15;
+    text-align:center;
+    color:var(--maroon);
+    margin:0 0 16px;
+    letter-spacing:-0.01em;
+  }
+  #protect-your-equity .sub{
+    text-align:center;
+    font-size:15px;
+    color:var(--grey);
+    line-height:1.65;
+    max-width:460px;
+    margin:0 auto 34px;
+  }
+  #protect-your-equity .path{
+    display:flex;
+    gap:10px;
+    margin-bottom:38px;
+  }
+  #protect-your-equity .path label{
+    flex:1;
+    border:1.5px solid rgba(92,31,31,0.3);
+    border-radius:10px;
+    padding:16px 14px;
+    cursor:pointer;
+    display:block;
+    transition:border-color .15s, background .15s;
+  }
+  #protect-your-equity .path label.active{
+    border-color:var(--maroon);
+    background:rgba(92,31,31,0.06);
+  }
+  #protect-your-equity .path input{display:none;}
+  #protect-your-equity .path .ptitle{
+    font-weight:700;
+    font-size:14px;
+    color:var(--maroon-deep);
+    display:block;
+    margin-bottom:3px;
+  }
+  #protect-your-equity .path .pdesc{
+    font-size:12px;
+    color:var(--grey);
+    line-height:1.4;
+  }
+  #protect-your-equity .movement-note{
+    display:none;
+    background:var(--cream-deep);
+    border-left:3px solid var(--maroon);
+    border-radius:0 8px 8px 0;
+    padding:14px 16px;
+    font-size:13px;
+    color:var(--ink);
+    line-height:1.5;
+    margin:-18px 0 32px;
+  }
+  #protect-your-equity .movement-note.show{display:block;}
+  #protect-your-equity .section-card{
+    background:var(--cream-deep);
+    border-radius:14px;
+    padding:28px 26px;
+    margin-bottom:0;
+  }
+  #protect-your-equity .section-card h2{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:24px;
+    color:var(--maroon-deep);
+    margin:0 0 10px;
+  }
+  #protect-your-equity .section-card p{
+    font-size:14px;
+    color:var(--grey);
+    line-height:1.6;
+    margin:0;
+  }
+  #protect-your-equity form{
+    background:#fff;
+    border-radius:0 0 14px 14px;
+    padding:30px 26px 34px;
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+  }
+  #protect-your-equity .field label{
+    display:block;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--maroon-deep);
+    margin-bottom:8px;
+  }
+  #protect-your-equity .field .hint{
+    display:block;
+    font-weight:400;
+    text-transform:none;
+    letter-spacing:0;
+    color:var(--grey);
+    font-size:12.5px;
+    margin-top:4px;
+  }
+  #protect-your-equity input[type=text], #protect-your-equity input[type=email], #protect-your-equity select, #protect-your-equity textarea{
+    width:100%;
+    padding:13px 14px;
+    border:1.5px solid rgba(92,31,31,0.25);
+    border-radius:8px;
+    background:var(--cream);
+    font-family:"Karla",sans-serif;
+    font-size:14.5px;
+    color:var(--ink);
+  }
+  #protect-your-equity textarea{
+    min-height:96px;
+    resize:vertical;
+  }
+  #protect-your-equity input:focus, #protect-your-equity select:focus, #protect-your-equity textarea:focus{
+    outline:none;
+    border-color:var(--maroon);
+    background:#fff;
+  }
+  #protect-your-equity .two-col{
+    display:flex;
+    gap:14px;
+  }
+  #protect-your-equity .two-col .field{flex:1;}
+  #protect-your-equity .checks{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  #protect-your-equity .check{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border:1.5px solid rgba(92,31,31,0.25);
+    border-radius:8px;
+    padding:12px 14px;
+    cursor:pointer;
+    background:var(--cream);
+    transition:border-color .15s, background .15s;
+  }
+  #protect-your-equity .check.checked{
+    border-color:var(--maroon);
+    background:rgba(92,31,31,0.06);
+  }
+  #protect-your-equity .check input{
+    width:16px;
+    height:16px;
+    accent-color:var(--maroon);
+    margin:0;
+  }
+  #protect-your-equity .check span{font-size:14px;}
+  #protect-your-equity button.submit{
+    margin-top:6px;
+    background:var(--maroon);
+    color:var(--cream);
+    border:none;
+    border-radius:8px;
+    padding:17px 20px;
+    font-family:"Karla",sans-serif;
+    font-weight:700;
+    font-size:14.5px;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:background .15s;
+  }
+  #protect-your-equity button.submit:hover{
+    background:var(--maroon-deep);
+  }
+  #protect-your-equity .fineprint{
+    text-align:center;
+    font-size:12.5px;
+    color:var(--grey);
+    margin-top:6px;
+    line-height:1.6;
+  }
+  #protect-your-equity .fineprint a{color:var(--maroon); font-weight:600;}
+  #protect-your-equity .error{
+    color:#8a2c1f;
+    font-size:12px;
+    margin-top:6px;
+    display:none;
+  }
+  #protect-your-equity .footer-tag{
+    text-align:center;
+    margin-top:40px;
+  }
+  #protect-your-equity .footer-tag .name{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:16px;
+    color:var(--maroon-deep);
+  }
+  #protect-your-equity .footer-tag .line{
+    font-size:12.5px;
+    color:var(--grey);
+    margin-top:4px;
+  }
+
+  /* Refined Protect Your Equity presentation */
+  #protect-your-equity .pye-wrap{max-width:760px;padding:48px 26px 80px;}
+  #protect-your-equity .eyebrow{border:0;border-radius:0;padding:0;letter-spacing:.12em;font-size:.78rem;margin:0 0 16px;width:auto;display:block;text-align:center;}
+  #protect-your-equity h1{font-size:clamp(2rem,5vw,2.8rem);line-height:1.12;max-width:620px;margin:0 auto 18px;}
+  #protect-your-equity .sub{font-size:clamp(1rem,2.2vw,1.1rem);max-width:620px;margin:0 auto 32px;}
+  #protect-your-equity .choice-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 38px;}
+  #protect-your-equity .choice-card{border:1px solid rgba(92,31,31,.28);border-radius:18px;padding:26px 24px 24px;background:#FBF7EE;display:flex;flex-direction:column;align-items:flex-start;min-width:0;}
+  #protect-your-equity .choice-card.firm-choice{border:1.5px solid var(--maroon);}
+  #protect-your-equity .choice-card h2{font-family:"Fraunces",serif;font-weight:500;color:var(--maroon-deep);font-size:clamp(1.35rem,2.6vw,1.8rem);line-height:1.2;margin:0 0 14px;}
+  #protect-your-equity .choice-card p{color:var(--grey);font-size:1rem;line-height:1.55;margin:0 0 18px;flex:1;}
+  #protect-your-equity .choice-card p.path-kicker{color:var(--maroon-deep);background:rgba(92,31,31,.035);border:1px solid rgba(92,31,31,.22);padding:7px 10px;border-radius:6px;font-size:.78rem;font-weight:800;letter-spacing:.045em;line-height:1.4;margin:0 0 14px;}
+  #protect-your-equity .choice-card p:last-of-type{margin-bottom:24px;}
+  #protect-your-equity .choice-card a{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-align:center;text-decoration:none;background:var(--cream-deep);color:var(--maroon-deep);font-weight:700;padding:14px 18px;border-radius:12px;min-height:54px;width:100%;line-height:1.35;}
+  #protect-your-equity .choice-card.firm-choice a{background:var(--maroon);color:#fff;}
+  #protect-your-equity .choice-card a:hover{filter:brightness(.97);}
+  #protect-your-equity .section-card{border-radius:14px 14px 0 0;padding:26px 26px 22px;}
+  #protect-your-equity .section-card h2{font-size:1.55rem;}
+  #protect-your-equity .section-card p{font-size:1rem;}
+  #protect-your-equity form{border-radius:0 0 14px 14px;}
+  #protect-your-equity input[type=text], #protect-your-equity input[type=email], #protect-your-equity select, #protect-your-equity textarea{font-size:16px;min-height:48px;}
+  #protect-your-equity textarea{min-height:112px;}
+  #protect-your-equity .form-intro-note{font-size:.9rem;line-height:1.55;color:var(--grey);margin:0 0 0;}
+  #uploadHint a, .form-status a{color:var(--maroon); text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1.5px; font-weight:700; word-break:break-word;}
+  #uploadHint a:hover, .form-status a:hover{color:var(--maroon-deep);}
+  #protect-your-equity .form-status{display:none;padding:14px 16px;border-left:3px solid var(--maroon);background:var(--cream-deep);color:var(--maroon-deep);line-height:1.5;border-radius:0 8px 8px 0;}
+  #protect-your-equity .form-status.show{display:block;}
+  #protect-your-equity .form-status.error{border-left-color:#a32d24;background:#fff0ed;color:#7c211b;}
+  #protect-your-equity .submit:disabled{opacity:.65;cursor:wait;}
+  #protect-your-equity .contact-highlight{display:inline-block;color:var(--maroon-deep);background:rgba(92,31,31,.09);padding:3px 8px;border-radius:5px;font-weight:700;text-decoration:none;}
+  #protect-your-equity .contact-highlight:hover{background:rgba(92,31,31,.16);text-decoration:underline;}
+  #protect-your-equity .form-status p{margin:10px 0 0;line-height:1.65;}
+  #protect-your-equity .form-status a{color:var(--maroon);font-weight:700;}
+  #protect-your-equity .firm-only{display:block;}
+  body.movement-mode #protect-your-equity .firm-only{display:none;}
+  #protect-your-equity .movement-only{display:none;}
+  #protect-your-equity .two-col.firm-only{display:flex;gap:20px;}
+  body.movement-mode #protect-your-equity .movement-only{display:block;}
+  #protect-your-equity .tribe-word{background:rgba(92,31,31,.10);color:var(--maroon-deep);padding:1px 5px 2px;border-radius:4px;font-weight:700;}
+  #protect-your-equity .movement-note p{margin:0 0 14px;line-height:1.75;}
+  #protect-your-equity .movement-note p:last-child{margin-bottom:0;}
+  #protect-your-equity .movement-closing{padding:4px 0 2px;line-height:1.75;}
+  #protect-your-equity .movement-closing p{margin:0 0 16px;}
+  #protect-your-equity .movement-closing p:first-child{color:var(--maroon-deep);font-weight:800;letter-spacing:.06em;}
+  #protect-your-equity .movement-closing p:last-child{margin-bottom:0;}
+  #protect-your-equity .firm-contact{border-top:1px solid rgba(92,31,31,.16);padding-top:18px;line-height:1.7;}
+  #protect-your-equity .firm-contact p{margin:0 0 12px;}
+  #protect-your-equity .firm-contact .fineprint{font-size:12px;color:var(--grey);}
+  #protect-your-equity .choice-inline{display:flex;flex-wrap:wrap;gap:18px;}
+  #protect-your-equity .choice-inline label{display:flex;align-items:center;gap:8px;font-weight:500;}
+  #protect-your-equity .choice-inline input{width:auto;min-height:0;}
+  #protect-your-equity .movement-copy{margin:6px 0 12px;line-height:1.65;}
+  #protect-your-equity input[type=file]:focus{outline:2px solid var(--maroon);outline-offset:2px;}
+  #protect-your-equity .path{display:none;}
+  #protect-your-equity .path label:focus-within, #protect-your-equity .check:focus-within{outline:2px solid var(--maroon);outline-offset:2px;}
+  #protect-your-equity button.submit{border-radius:10px;min-height:54px;}
+  @media (max-width:600px){#protect-your-equity .pye-wrap{padding:34px 18px 56px}#protect-your-equity .choice-cards{grid-template-columns:1fr;gap:14px;margin-bottom:30px}#protect-your-equity .choice-card{padding:23px 21px}#protect-your-equity .choice-card p{margin-bottom:18px}#protect-your-equity .two-col{flex-direction:column;gap:20px}#protect-your-equity .section-card{padding:23px 20px 20px}#protect-your-equity form{padding:25px 20px 28px;gap:21px}#protect-your-equity .path{flex-direction:column;gap:10px}#protect-your-equity .path label{padding:15px}}
+
+
+</style>
+<div class="pye-wrap">
+
+
+<span class="eyebrow">PROTECT YOUR EQUITY</span>
+<h1 id="pye-title">Before you scale, protect what you’re building.</h1>
+<p class="sub">Tell BWAFA what you’re building, where you want to take it, and what’s putting pressure on it right now. Whether you’re joining the Movement or seeking the Firm’s expertise, there’s a place to begin.</p>
+<div aria-label="Choose how to connect with BWAFA" class="choice-cards">
+<article class="choice-card"><h2>Join the Movement</h2><p class="path-kicker">OPEN DOOR · COMMUNITY · BELONGING</p><p>You don’t have to have everything figured out to belong here. Whether you’re building a business, developing an idea, creating something of your own or contributing to Africa’s future in another way, we want to know who you are &amp; what brings you here. The Movement welcomes people.</p><p>Free to join. Connect with African builders.</p><a data-path="Movement" href="#bwafaForm">Join the Movement <span aria-hidden="true">→</span></a></article>
+<article class="choice-card firm-choice"><h2>Build with the Firm</h2><p class="path-kicker">DEFINED SCOPE · PAID PRACTICE · ACCOUNTABILITY</p><p>For businesses, ventures and organisations that need serious commercial, strategic or structural work. Tell us what you’re building, what needs attention and what you need to achieve. We’ll assess the context and determine whether there’s a suitable basis for an engagement. The Firm qualifies work.</p><a data-path="Firm" href="#bwafaForm">Build with the Firm <span aria-hidden="true">→</span></a></article>
+</div>
+
+<div class="path">
+    <label id="pathMovementLabel">
+      <input type="radio" name="path" value="Movement" id="pathMovement">
+      <span class="ptitle">Join the Movement</span>
+      <span class="pdesc">Free to join. Connect with African builders.</span>
+    </label>
+    <label id="pathFirmLabel" class="active">
+      <input type="radio" name="path" value="Firm" id="pathFirm" checked>
+      <span class="ptitle">Build with the Firm</span>
+      <span class="pdesc">Explore a paid engagement. Share your business needs.</span>
+    </label>
+  </div>
+
+<div class="movement-note" id="movementNote">
+    <p>The Movement is free and open globally online. Follow <a href="https://www.instagram.com/bwafaglobal/" target="_blank" rel="noopener noreferrer"><strong>@bwafaglobal</strong></a> and step into the curated Roundtable.</p>
+    <p>Still send this in if you’d like BWAFA to know who’s joining and why.</p>
+    <p>BWAFA is for Africans building, creating and contributing to what comes next, we believe in legacy creation. We’re called the <span class="tribe-word">Tribe</span>.</p>
+    <p>Our Effectiveness includes ensuring fellow builders don’t build in isolation ever again. Realising there is another builder who shares a similar story or is at a similar build stage as you can be relieving. You also get to network with builders who have set great footprints that can boost your journey, and we build community through collaborative action and impact.</p>
+  </div>
+<div class="section-card">
+<h2 id="formSectionTitle">Let’s understand what you’re building.</h2>
+<p id="formSectionIntro">Before we discuss an engagement, we need to understand your business, where you intend to take it, the work that may be required and the appropriate next step.</p>
+</div>
+<form id="bwafaForm" enctype="multipart/form-data" novalidate="">
+<p class="form-intro-note"><em>This takes about 2–3 minutes to complete. Fields marked * are required.</em></p>
+<p class="form-intro-note firm-only">Tell us about your business and the support you’re looking for.</p>
+<div class="field movement-only" id="movementIntroHeading"><p class="form-intro-note"><strong>TELL US YOUR PREFERRED NAME, MORE ABOUT YOURSELF, YOUR INTERESTS &amp; EMAIL ADDRESS</strong></p></div>
+<div class="two-col">
+<div class="field">
+<label id="nameLabel" for="name">YOUR NAME *</label>
+<input id="name" placeholder="Full name" type="text"/>
+<div class="error" id="nameError">Enter your name.</div>
+</div>
+<div class="field">
+<label for="email">EMAIL ADDRESS *</label>
+<input id="email" placeholder="you@company.com" type="email"/>
+<div class="error" id="emailError">Enter an email address.</div>
+</div>
+</div>
+<div class="field movement-only" id="movementAboutField">
+  <label for="movementAbout">MORE ABOUT YOURSELF</label>
+  <textarea id="movementAbout" placeholder="Tell us a little about yourself."></textarea>
+</div>
+<div class="field movement-only" id="movementInterestsField">
+  <label for="movementInterests">WHAT ARE YOU INTERESTED IN?</label>
+  <textarea id="movementInterests" placeholder="Don’t be shy! Tell us."></textarea>
+</div>
+<div class="field movement-only" id="movementCountryField">
+  <label for="movementCountry">WHERE ARE YOU BASED?</label>
+  <input id="movementCountry" type="text" placeholder="Country"/>
+</div>
+<div class="field movement-only" id="movementRoleField">
+  <label for="movementRole">WHICH BEST DESCRIBES YOU?</label>
+  <select id="movementRole"><option value="">Select one</option><option>Founder / entrepreneur</option><option>Creative / maker</option><option>Business / Organisational leader</option><option>Professional / specialist</option><option>Student / emerging builder</option><option>Investor / ecosystem supporter</option><option>Something else</option></select>
+</div>
+<div class="field movement-only" id="movementBuildField">
+  <label for="movementBuild">WHAT ARE YOU BUILDING, WORKING ON OR HOPING TO CONTRIBUTE TO?</label>
+  <textarea id="movementBuild" placeholder="Share what you're building, working on or hoping to contribute to."></textarea>
+</div>
+<div class="field movement-only" id="movementSocialsField">
+  <label for="movementSocials">WHERE DID YOU FIRST HEAR ABOUT BWAFA? (OPTIONAL)</label>
+  <input id="movementSocials" type="text" placeholder="E.g. Instagram, A friend, X, etc."/>
+</div>
+<div class="field movement-only" id="movementTrusteeField">
+  <label for="movementTrustee">WOULD YOU BE INTERESTED IN OUR UPCOMING BWAFA TRUSTEE?</label>
+  <p class="hint movement-copy">An initiative of mastering the art of legacy building. More information to be shared soon!</p>
+  <select id="movementTrustee"><option value="">Select one…</option><option>Yes, I’m interested</option><option>I’d like to learn more first</option><option>Not at this time</option></select>
+</div>
+<div class="field movement-only" id="movementReasonsField">
+  <label>WHAT BRINGS YOU TO THE MOVEMENT? <span class="hint">(Select any that apply)</span></label>
+  <div class="checks" id="movementReasons">
+    <label class="check"><input type="checkbox" value="I want to connect with other African builders"><span>I want to connect with other African builders</span></label>
+    <label class="check"><input type="checkbox" value="I’m looking to learn and grow"><span>I’m looking to learn and grow</span></label>
+    <label class="check"><input type="checkbox" value="I want to share my work or ideas"><span>I want to share my work or ideas</span></label>
+    <label class="check"><input type="checkbox" value="I’m interested in contributing my skills or expertise"><span>I’m interested in contributing my skills or expertise</span></label>
+    <label class="check"><input type="checkbox" value="I want to find collaborators and meaningful opportunities"><span>I want to find collaborators and meaningful opportunities</span></label>
+    <label class="check"><input type="checkbox" value="I believe in what BWAFA is building and want to be part of it"><span>I believe in what BWAFA is building and want to be part of it</span></label>
+  </div>
+</div>
+<div class="field movement-only" id="movementWorkField">
+  <label for="movementWork">WHERE CAN WE FIND YOUR WORK? (OPTIONAL)</label>
+  <input id="movementWork" type="text" placeholder="Website, LinkedIn or Instagram profile"/>
+</div>
+<div class="field movement-only" id="movementMeaningField">
+  <label for="movementMeaning">WHAT WOULD MAKE BEING PART OF THIS MOVEMENT MEANINGFUL TO YOU? (OPTIONAL)</label>
+  <textarea id="movementMeaning" placeholder="A few words are enough."></textarea>
+</div>
+<div class="field movement-only" id="movementPrivacyNote">
+  <p class="form-intro-note"><em>Your information will be used to understand who’s joining the Movement and communicate with you about relevant BWAFA activities!</em></p>
+</div>
+<div aria-live="polite" class="form-status" id="formStatus" role="status"></div>
+<div class="two-col firm-only">
+<div class="field">
+<label for="business">BUSINESS OR VENTURE NAME</label>
+<input id="business" placeholder="Company name" type="text"/>
+</div>
+<div class="field">
+<label for="country">COUNTRY OF OPERATION</label>
+<input id="country" placeholder="E.g. Lagos, Nigeria" type="text"/>
+</div>
+</div>
+<div class="field firm-only">
+<label for="stage">WHAT STAGE IS THE BUSINESS AT?</label>
+<select id="stage">
+<option value="">Select one</option>
+<option>Developing Idea / early stage</option>
+<option>Building and testing the product or service</option>
+<option>Operating business / Generating Revenue</option>
+<option>Scaling / expansion</option>
+<option>Preparing to raise capital / Investment</option>
+<option>Already raised / restructuring</option>
+<option>Other</option>
+</select>
+</div>
+<div class="field firm-only">
+<label>WHERE TO START? <span class="hint">Select any areas where you would value support.</span></label>
+<div class="checks" id="protectChecks">
+        <label class="check"><input type="checkbox" value="BUSINESS STRUCTURE"><span>BUSINESS STRUCTURE</span></label>
+        <label class="check"><input type="checkbox" value="EQUITY / OWNERSHIP"><span>EQUITY / OWNERSHIP</span></label>
+        <label class="check"><input type="checkbox" value="CAPITAL / FUNDRAISING"><span>CAPITAL / FUNDRAISING</span></label>
+        <label class="check"><input type="checkbox" value="CONTRACTS / COMMERCIAL TERMS"><span>CONTRACTS / COMMERCIAL TERMS</span></label>
+        <label class="check"><input type="checkbox" value="BRAND POSITIONING / COMMUNICATION"><span>BRAND POSITIONING / COMMUNICATION</span></label>
+        <label class="check"><input type="checkbox" value="GROWTH STRATEGY / NARRATIVE BRANDING"><span>GROWTH STRATEGY / NARRATIVE BRANDING</span></label>
+        <label class="check"><input type="checkbox" value="EXPANSION / MARKET ENTRY"><span>EXPANSION / MARKET ENTRY</span></label>
+        <label class="check"><input type="checkbox" value="OTHER SPECIALIST WORK"><span>OTHER SPECIALIST WORK</span></label>
+      </div>
+</div>
+<div class="field firm-only" id="supportTypeField">
+<label for="supportType">WHAT KIND OF SUPPORT ARE YOU LOOKING FOR?</label>
+<select id="supportType">
+<option value="">Select one</option>
+<option>Consultation or strategic conversation</option>
+<option>Contract or document review</option>
+<option>Brand, ownership, or intellectual property considerations</option>
+<option>Business structure or governance</option>
+<option>Pitch deck or investment readiness</option>
+<option>Strategic business or venture support</option>
+<option>Ongoing or broader professional engagement</option>
+<option>Other</option>
+</select>
+</div>
+<div class="field firm-only" id="situationField">
+<label for="situation">What is the main challenge you’re trying to solve? *</label>
+<textarea id="situation" required placeholder="Tell us what’s happening, what’s at stake and why you need support now."></textarea>
+<div class="error" id="situationError">Tell us what’s happening, even roughly.</div>
+</div>
+<div class="field firm-only" id="successOutcomeField">
+<label for="successOutcome">What would a successful engagement help you achieve? *</label>
+<textarea id="successOutcome" required placeholder="Describe the outcome you want to work towards."></textarea>
+</div>
+<div class="field firm-only" id="outcomeField">
+<label for="outcome">WHAT WOULD YOU MOST LIKE TO LEAVE THE CONVERSATION WITH?</label>
+<select id="outcome">
+<option value="">Select one</option>
+<option>Clarity on a decision</option>
+<option>Feedback on a document or existing work</option>
+<option>A better understanding of my options</option>
+<option>A practical action plan</option>
+<option>Support with implementing a solution</option>
+<option>I’m not sure yet; I’d like help identifying the right next step</option>
+<option>Other</option>
+</select>
+</div>
+<div class="field firm-only" id="uploadField">
+<label for="documents">SUPPORTING DOCUMENTS (OPTIONAL)</label>
+<p class="hint" id="uploadHint" style="margin:6px 0 10px;">Have a relevant pitch deck, company profile, business plan or other supporting document? Attach up to 5 PDF, DOC/DOCX, PPT/PPTX or image files (10 MB total maximum).</p>
+<input accept=".pdf,.doc,.docx,.ppt,.pptx,.png,.jpg,.jpeg" id="documents" multiple="" name="documents" style="width:100%;padding:12px;border:1.5px solid rgba(92,31,31,0.25);border-radius:8px;background:var(--cream);font:14px 'Karla',sans-serif;color:var(--ink);" type="file"/>
+</div>
+<div class="field firm-only" id="consultationBookingField">
+<label>WOULD YOU LIKE TO BOOK A CONSULTATION IMMEDIATELY?</label>
+<div class="choice-inline"><label><input type="radio" name="bookConsultation" value="Yes, Absolutely"> <span>Yes, Absolutely</span></label><label><input type="radio" name="bookConsultation" value="No, Not Yet"> <span>No, Not Yet</span></label></div>
+</div>
+<div class="field firm-only" id="consultationNote">
+<p class="form-intro-note"><strong>Consultations &amp; engagements:</strong> We’ll review your submission to understand your needs and determine appropriate next steps. Where relevant, we’ll discuss the proposed scope and applicable fee. Paid work begins only after scope, terms and fees are agreed.</p>
+</div>
+<button class="submit" id="submitButton" type="submit">Submit your request →</button>
+
+<div class="movement-only movement-closing" id="movementClosing">
+  <p>You’re entering an ecosystem of builders creating assets that outlive us all. Welcome home.</p>
+</div>
+<div class="firm-only firm-contact" id="firmContact">
+  <p>Prefer email? <a class="contact-highlight" href="mailto:contact@bwafa.com">Contact BWAFA directly</a></p>
+  <p>Prefer WhatsApp? <a class="contact-highlight" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Connect with us at @bwafaglobal</a></p>
+  <p class="fineprint">Submitting this form is a first step towards greater intentionality for your business, brand, or build.</p>
+</div>
+</form>
+<div class="footer-tag">
+<div class="name">BWAFA — Building With Africans, For Africa</div>
+<div class="line">The Movement creates the authority. The Firm converts it.</div>
+</div>
+
+</div>
+</section>
+
+</main>
+<footer>
+<div class="wrap">
+<div class="flogo">
+<img alt="BWAFA logo" src="https://raw.githubusercontent.com/BWAFA-Global/BWAFA.com/main/image-01-1bfacd54218ec7df.webp"/>
+<span>BWAFA</span>
+</div>
+<div class="tagline"><span>The Movement creates the authority.</span><br/><span>The Firm converts it.</span></div>
+<div class="fcontact-grid">
+
+
+<div class="fcontact-block">
+<div class="fcontact-label">BWAFA</div>
+<a aria-label="Email BWAFA" href="mailto:contact@bwafa.com"><svg aria-hidden="true" class="email-icon" viewBox="0 0 24 24"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13Zm2.2.5L12 11.2 18.8 6H5.2Zm13.8 2.5-6.4 4.9a1 1 0 0 1-1.2 0L5 8.5v10a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-10Z"></path></svg> contact@bwafa.com</a>
+<div aria-label="BWAFA social platforms" class="socials">
+<a aria-label="BWAFA on Instagram" class="social-link" href="https://www.instagram.com/bwafaglobal" rel="noopener noreferrer" target="_blank">
+<span class="social-label">Instagram</span>
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7.3 2h9.4A5.3 5.3 0 0 1 22 7.3v9.4a5.3 5.3 0 0 1-5.3 5.3H7.3A5.3 5.3 0 0 1 2 16.7V7.3A5.3 5.3 0 0 1 7.3 2Zm0 2A3.3 3.3 0 0 0 4 7.3v9.4A3.3 3.3 0 0 0 7.3 20h9.4a3.3 3.3 0 0 0 3.3-3.3V7.3A3.3 3.3 0 0 0 16.7 4H7.3Zm9.95 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"></path></svg>
+</a>
+<a aria-label="BWAFA on Facebook" class="social-link" href="https://www.facebook.com/bwafaglobal" rel="noopener noreferrer" target="_blank">
+<span class="social-label">Facebook</span>
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4Z"></path></svg>
+</a>
+<a aria-label="BWAFA on TikTok" class="social-link" href="https://www.tiktok.com/@bwafaglobal" rel="noopener noreferrer" target="_blank">
+<span class="social-label">TikTok</span>
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M15.7 4c.4 1.9 1.5 3.1 3.3 3.2v3.1c-1.3 0-2.5-.4-3.5-1.1v5.9c0 3.4-2.4 5.6-5.7 5.6-3.1 0-5.3-2-5.3-4.9 0-3.2 2.7-5.1 5.9-4.8v3.2c-1.5-.2-2.6.4-2.6 1.6 0 1 .8 1.7 2 1.7 1.4 0 2.4-.9 2.4-2.7V4h3.5Z"></path></svg>
+</a>
+<a aria-label="BWAFA on Threads" class="social-link" href="https://www.threads.net/@bwafaglobal" rel="noopener noreferrer" target="_blank">
+<span class="social-label">Threads</span>
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12.1 2C6.2 2 3 5.5 3 11.8 3 18.2 6.3 22 12 22c5.2 0 8.6-2.7 8.6-7 0-3.5-2.2-5.7-5.7-6.1-.7-2.2-2.2-3.2-4.5-3.2-1.8 0-3.2.7-4.1 2.1l1.9 1.2c.5-.8 1.2-1.2 2.2-1.2 1.2 0 2 .5 2.4 1.5-1-.1-2-.1-2.9.1-2.4.4-3.8 1.8-3.8 3.7 0 2.2 1.8 3.6 4.2 3.6 2.6 0 4.3-1.5 4.5-4.2 2 .3 2.9 1.5 2.9 3.5 0 2.9-2.4 4.8-6 4.8-4.4 0-6.8-2.9-6.8-8.2 0-5 2.3-7.5 6.9-7.5 3.8 0 6.2 1.7 7.2 5.1l2.1-.6C18.3 4 15.7 2 12.1 2Zm-.2 11.9c-1.2 0-2-.6-2-1.5 0-.7.6-1.3 1.9-1.5.8-.1 1.6-.1 2.4 0 0 1.9-.8 3-2.3 3Z"></path></svg>
+</a>
+<a aria-label="BWAFA on X" class="social-link" href="https://x.com/bwafaglobal" rel="noopener noreferrer" target="_blank">
+<span class="social-label">X</span>
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 3h4.1l4.1 5.6L16.8 3H20l-6.2 7.2L21 21h-4.1l-4.8-6.5L6.9 21H3.7l6.5-7.6L4 3Zm4.7 2.1H7.1l9.2 13.8h1.6L8.7 5.1Z"></path></svg>
+</a>
+</div>
+</div><div class="fcontact-block">
+<div class="fcontact-label">The Lead Architect</div>
+<a href="mailto:hello@mandymorah.com">hello@mandymorah.com</a>
+<a href="https://www.mandymorah.com" rel="noopener" target="_blank">mandymorah.com</a>
+<a aria-label="Mandyoluogy on Instagram" href="https://www.instagram.com/Mandyoluogy" rel="noopener noreferrer" target="_blank">@Mandyoluogy</a>
+</div></div>
+<div class="fmeta">© 2026 BWAFA. Building With Africans, For Africa.</div>
+</div>
+</footer>
+<script>
+  (function(){
+    var nav = document.querySelector('nav.wrap');
+    var menuBtn = document.querySelector('.menu-btn');
+    var navLinks = document.querySelectorAll('.navlinks a, .navcta');
+    if(!nav || !menuBtn) return;
+
+    function closeMenu(){
+      nav.classList.remove('menu-open');
+      menuBtn.setAttribute('aria-expanded','false');
+      menuBtn.setAttribute('aria-label','Open navigation');
+    }
+
+    menuBtn.addEventListener('click', function(){
+      var isOpen = nav.classList.toggle('menu-open');
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuBtn.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
+
+    navLinks.forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function(event){
+      if(event.key === 'Escape') closeMenu();
+    });
+  })();
+</script>
+<script>
+
+  const movementRadio = document.getElementById('pathMovement');
+  const firmRadio = document.getElementById('pathFirm');
+  const movementLabel = document.getElementById('pathMovementLabel');
+  const firmLabel = document.getElementById('pathFirmLabel');
+  const movementNote = document.getElementById('movementNote');
+  const formEl = document.getElementById('bwafaForm');
+
+  function updatePath(){
+    if(movementRadio.checked){
+      movementLabel.classList.add('active');
+      firmLabel.classList.remove('active');
+      movementNote.classList.add('show');
+      document.body.classList.add('movement-mode');
+      document.getElementById('submitButton').textContent = 'YOU GO BUILDER! →';
+      document.getElementById('nameLabel').textContent = 'YOUR PREFERRED NAME *';
+      document.getElementById('name').placeholder = 'Preferred name';
+      document.getElementById('formSectionTitle').textContent = 'Tell us a little about yourself.';
+      document.getElementById('formSectionIntro').textContent = 'Your story, interests and build matter here. Share what you feel comfortable sharing, and let’s get to know the builder behind the build.';
+    } else {
+      firmLabel.classList.add('active');
+      movementLabel.classList.remove('active');
+      movementNote.classList.remove('show');
+      document.body.classList.remove('movement-mode');
+      document.getElementById('submitButton').textContent = 'Submit your request →';
+      document.getElementById('nameLabel').textContent = 'YOUR NAME *';
+      document.getElementById('name').placeholder = 'Full name';
+      document.getElementById('formSectionTitle').textContent = 'Let’s understand what you’re building.';
+      document.getElementById('formSectionIntro').textContent = 'Before we discuss an engagement, we need to understand your business, where you intend to take it, the work that may be required and the appropriate next step.';
+    }
+  }
+  document.querySelectorAll('.choice-card a[data-path]').forEach(function(link){
+    link.addEventListener('click', function(){
+      if(link.dataset.path === 'Movement') movementRadio.checked = true;
+      else firmRadio.checked = true;
+      updatePath();
+      setTimeout(function(){ document.getElementById('bwafaForm').scrollIntoView({behavior:'smooth',block:'start'}); }, 0);
+    });
+  });
+  movementRadio.addEventListener('change', updatePath);
+  firmRadio.addEventListener('change', updatePath);
+
+  document.querySelectorAll('#protectChecks .check input, #movementReasons .check input').forEach(function(cb){
+    cb.addEventListener('change', function(){
+      cb.closest('.check').classList.toggle('checked', cb.checked);
+    });
+  });
+
+  // Movement form: Formspree (notification recipient is set in the Formspree dashboard).
+  const BWAFA_FORM_ENDPOINT = 'https://formspree.io/f/meaagbqj';
+  // Firm form: Forminit (free plan supports file uploads). Paste your Forminit Form ID below (Forminit dashboard > your form).
+  const FIRM_FORM_ID = 'YOUR_FORMINIT_FORM_ID';
+  const FIRM_FORM_ENDPOINT = 'https://forminit.com/f/' + FIRM_FORM_ID;
+  const MAX_FILES = 5;
+  const MAX_TOTAL_BYTES = 10 * 1024 * 1024;
+  const ALLOWED_EXTENSIONS = ['pdf','doc','docx','ppt','pptx','png','jpg','jpeg'];
+  let submissionInProgress = false;
+
+  // Uploads only switch on once a real Forminit Form ID is pasted above.
+  const FORMINIT_READY = FIRM_FORM_ID.indexOf('YOUR_FORMINIT') === -1;
+  const EMAIL_LINK = '<a href="mailto:contact@bwafa.com">contact@bwafa.com</a>';
+  function escapeHtml(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  if(!FORMINIT_READY){
+    const upInput = document.getElementById('documents');
+    if(upInput) upInput.style.display = 'none';
+    const upHint = document.getElementById('uploadHint');
+    if(upHint) upHint.innerHTML = 'Have a supporting document? Email it to ' + EMAIL_LINK + ' after submitting.';
+  }
+
+  function showFormStatus(message, isError, isHtml){
+    const status = document.getElementById('formStatus');
+    status.classList.remove('show','error');
+    if(isHtml) status.innerHTML = message; else status.textContent = message;
+    status.classList.add('show');
+    if(isError) status.classList.add('error');
+    status.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+
+  function collectActiveFormData(path){
+    const data = new FormData();
+    const appendValue = (key, id) => {
+      const el = document.getElementById(id);
+      if(el) data.append(key, (el.value || '').trim());
+    };
+    data.append('pathway', path);
+    appendValue('name','name');
+    appendValue('email','email');
+    if(path === 'Movement'){
+      appendValue('about_yourself','movementAbout');
+      appendValue('interests','movementInterests');
+      appendValue('country_based_in','movementCountry');
+      appendValue('builder_type','movementRole');
+      appendValue('building_working_on_or_contributing_to','movementBuild');
+      appendValue('where_first_heard_about_bwafa','movementSocials');
+      appendValue('interested_in_bwafa_trustee','movementTrustee');
+      appendValue('work_profile_optional','movementWork');
+      appendValue('meaningful_movement_optional','movementMeaning');
+      const reasons = Array.from(document.querySelectorAll('#movementReasons input:checked')).map(el => el.value);
+      data.append('reasons_for_joining', reasons.join('; '));
+    } else {
+      appendValue('business_or_venture_name','business');
+      appendValue('country_of_operation','country');
+      appendValue('business_stage','stage');
+      appendValue('support_type','supportType');
+      appendValue('main_challenge','situation');
+      appendValue('successful_engagement_outcome','successOutcome');
+      appendValue('desired_conversation_outcome','outcome');
+      const supportAreas = Array.from(document.querySelectorAll('#protectChecks input:checked')).map(el => el.value);
+      data.append('support_areas', supportAreas.join('; '));
+      const booking = document.querySelector('input[name="bookConsultation"]:checked');
+      data.append('book_consultation_immediately', booking ? booking.value : 'Not specified');
+      const files = document.getElementById('documents').files;
+      for(let i=0;i<files.length;i++) data.append('documents', files[i], files[i].name);
+    }
+    data.append('_subject', 'BWAFA ' + path + ' submission — ' + (document.getElementById('name').value.trim() || 'Website enquiry'));
+    return data;
+  }
+
+  formEl.addEventListener('submit', async function(e){
+    e.preventDefault();
+    if(submissionInProgress) return;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const path = movementRadio.checked ? 'Movement' : 'Firm';
+    const emailLooksValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const status = document.getElementById('formStatus');
+    status.classList.remove('show','error'); status.textContent = '';
+
+    document.getElementById('nameError').style.display = name ? 'none' : 'block';
+    document.getElementById('emailError').style.display = emailLooksValid ? 'none' : 'block';
+    document.getElementById('emailError').textContent = emailLooksValid ? '' : 'Enter a valid email address.';
+    let valid = Boolean(name && emailLooksValid);
+    if(path === 'Firm'){
+      const situation = document.getElementById('situation').value.trim();
+      const successOutcome = document.getElementById('successOutcome').value.trim();
+      document.getElementById('situationError').style.display = situation ? 'none' : 'block';
+      if(!situation || !successOutcome) valid = false;
+    }
+    if(!valid){ showFormStatus('Please check the highlighted fields and try again.', true); return; }
+
+    if(path === 'Firm'){
+      const fileInput = document.getElementById('documents');
+      const files = Array.from(fileInput.files || []);
+      if(files.length > MAX_FILES){ showFormStatus('Please upload no more than 5 files.', true); return; }
+      let totalBytes = 0;
+      for(const file of files){
+        totalBytes += file.size;
+        const extension = file.name.includes('.') ? file.name.split('.').pop().toLowerCase() : '';
+        if(!ALLOWED_EXTENSIONS.includes(extension)){
+          showFormStatus('“' + file.name + '” is not an accepted file type. Please use PDF, DOC/DOCX, PPT/PPTX, PNG or JPG files.', true); return;
+        }
+      }
+      if(totalBytes > MAX_TOTAL_BYTES){ showFormStatus('Your selected files exceed the 10 MB combined upload limit. Please remove a file or choose smaller files.', true); return; }
+    }
+
+    if(path === 'Firm'){
+      const firmButton = document.getElementById('submitButton');
+      submissionInProgress = true;
+      firmButton.disabled = true;
+      firmButton.setAttribute('aria-busy','true');
+      firmButton.textContent = 'Submitting…';
+      showFormStatus('Submitting your request. Please keep this page open.', false);
+      try{
+        const firmFiles = FORMINIT_READY ? Array.from(document.getElementById('documents').files || []) : [];
+        let sent = false;
+        let filesNotSent = false;
+
+        // 1) Preferred route: Forminit (supports file uploads), only when configured.
+        if(FORMINIT_READY){
+          try{
+            const src = collectActiveFormData('Firm');
+            const out = new FormData();
+            src.forEach(function(value, key){
+              if(value instanceof File || key === '_subject') return;
+              if(key === 'name') out.append('fi-sender-fullName', value);
+              else if(key === 'email') out.append('fi-sender-email', value);
+              else if(String(value).trim() !== '') out.append('fi-text-' + key, value);
+            });
+            firmFiles.forEach(function(file){ out.append('fi-file-documents[]', file, file.name); });
+            const r1 = await fetch(FIRM_FORM_ENDPOINT, { method:'POST', body:out, headers:{'Accept':'application/json'} });
+            let j1 = {};
+            try { j1 = await r1.json(); } catch (_) {}
+            if(r1.ok && j1.success === true) sent = true;
+          } catch(_) { /* fall through to the backup route */ }
+        }
+
+        // 2) Backup route (or the only route until Forminit is set up): Formspree, written answers only.
+        if(!sent){
+          const src2 = collectActiveFormData('Firm');
+          const out2 = new FormData();
+          src2.forEach(function(value, key){ if(!(value instanceof File)) out2.append(key, value); });
+          if(firmFiles.length){
+            out2.append('documents_note', 'Applicant selected ' + firmFiles.length + ' file(s) but they were NOT received: ' + firmFiles.map(function(f){ return f.name; }).join(', '));
+            filesNotSent = true;
+          }
+          const r2 = await fetch(BWAFA_FORM_ENDPOINT, { method:'POST', body:out2, headers:{'Accept':'application/json'} });
+          let j2 = {};
+          try { j2 = await r2.json(); } catch (_) {}
+          if(!r2.ok || j2.errors){
+            const d2 = j2.errors && j2.errors.length ? ' ' + j2.errors.map(function(er){ return er.message || String(er); }).join(' ') : '';
+            throw new Error('The form service did not accept this submission.' + d2);
+          }
+          sent = true;
+        }
+
+        const docsLine = filesNotSent
+          ? '<p>We couldn’t upload your documents this time. Please email them to ' + EMAIL_LINK + ' and mention your name.</p>'
+          : (FORMINIT_READY ? '' : '<p>Have a supporting document? Email it to ' + EMAIL_LINK + ' and mention your name.</p>');
+        showFormStatus('<strong>Your request is in. Thank you.</strong><p>We’ve received your submission and will review it carefully.</p><p>Next, we’ll reach out using the email you provided to discuss scope, the appropriate next step and, where relevant, the applicable fee. Paid work begins only after scope, terms and fees are agreed. If you asked to book a consultation, please keep an eye on your email within the next 3 working days.</p>' + docsLine + '<p>Want to stay close to the Movement while you wait? Follow <a href="https://www.instagram.com/bwafaglobal/" target="_blank" rel="noopener noreferrer">@Bwafaglobal</a> across all social platforms.</p>', false, true);
+        formEl.reset();
+        document.querySelectorAll('#protectChecks .check').forEach(function(c){ c.classList.remove('checked'); });
+      } catch(err){
+        showFormStatus('Your request was not submitted. Your entries are still on this page. Please check your connection and try again. If the problem continues, email ' + EMAIL_LINK + '.' + (err && err.message ? ' Details: ' + escapeHtml(err.message) : ''), true, true);
+      } finally {
+        submissionInProgress = false;
+        firmButton.disabled = false;
+        firmButton.removeAttribute('aria-busy');
+        firmButton.textContent = 'Submit your request →';
+      }
+      return;
+    }
+
+    if(BWAFA_FORM_ENDPOINT.includes('REPLACE_WITH_BWAFA_FORM_ID')){
+      showFormStatus('Online submission is not configured yet. Please contact BWAFA directly at contact@bwafa.com while the secure form endpoint is being configured. Your entries remain on this page.', true);
+      return;
+    }
+
+    const submitButton = document.getElementById('submitButton');
+    submissionInProgress = true;
+    submitButton.disabled = true;
+    submitButton.setAttribute('aria-busy','true');
+    submitButton.textContent = 'Submitting…';
+    showFormStatus('Submitting your information securely. Please keep this page open.', false);
+
+    try{
+      const payload = collectActiveFormData(path);
+      const response = await fetch(BWAFA_FORM_ENDPOINT, {
+        method:'POST',
+        body:payload,
+        headers:{'Accept':'application/json'}
+      });
+      let result = {};
+      try { result = await response.json(); } catch (_) {}
+      if(!response.ok || result.errors){
+        const detail = result.errors && result.errors.length ? ' ' + result.errors.map(err => err.message || String(err)).join(' ') : '';
+        throw new Error('The form service did not accept this submission.' + detail);
+      }
+      if(path === 'Movement'){
+        showFormStatus('<strong>You’re in. Welcome to the Movement.</strong><p>Thank you for introducing yourself to BWAFA. We’re glad you’re here.</p><p>This Movement is being built by Africans who want to do meaningful work, learn from one another and contribute to something bigger than themselves.</p><p>Stay connected. Follow <a href="https://www.instagram.com/bwafaglobal/" target="_blank" rel="noopener noreferrer">@Bwafaglobal</a> across all social platforms for conversations, ideas and opportunities from across the Movement.</p>', false, true);
+        formEl.reset();
+        document.querySelectorAll('#movementReasons .check').forEach(function(c){ c.classList.remove('checked'); });
+      } else {
+        showFormStatus('<strong>Your request has been submitted successfully.</strong><p>Thank you for contacting BWAFA. Your enquiry and any uploaded files have been sent for review. We’ll follow up using the contact information you provided.</p>', false, true);
+        formEl.reset();
+      }
+    } catch(err){
+      showFormStatus('Your request was not submitted. Your entries are still on this page. Please check your connection and try again. If the problem continues, contact ' + EMAIL_LINK + '.' + (err && err.message ? ' Details: ' + escapeHtml(err.message) : ''), true, true);
+    } finally {
+      submissionInProgress = false;
+      submitButton.disabled = false;
+      submitButton.removeAttribute('aria-busy');
+      submitButton.textContent = movementRadio.checked ? 'YOU GO BUILDER! →' : 'Submit your request →';
+    }
+  });
+
+  // If the person comes back with the browser Back button, reset the button and clear the status so nothing stale or misleading shows.
+  window.addEventListener('pageshow', function(ev){
+    if(ev.persisted){
+      submissionInProgress = false;
+      const btn = document.getElementById('submitButton');
+      btn.disabled = false;
+      btn.removeAttribute('aria-busy');
+      btn.textContent = movementRadio.checked ? 'YOU GO BUILDER! →' : 'Submit your request →';
+      const st = document.getElementById('formStatus');
+      st.classList.remove('show','error'); st.textContent = '';
+    }
+  });
+
+
+  // Hero buttons: jump to the form with the matching path already selected.
+  document.querySelectorAll('[data-route]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const radio = document.getElementById(btn.getAttribute('data-route') === 'Firm' ? 'pathFirm' : 'pathMovement');
+      if(radio && !radio.checked){
+        radio.checked = true;
+        radio.dispatchEvent(new Event('change', {bubbles:true}));
+      }
+    });
+  });
+
+</script>
+</body>
+</html>
